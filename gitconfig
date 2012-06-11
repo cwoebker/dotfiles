@@ -1,0 +1,30 @@
+[user]
+	name = cwoebker
+	email = cwoebker@gmail.com
+[github]
+	user = cwoebker
+    	token = xxx
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[color "branch"]
+	current = yellow reverse
+	remote = green bold
+	local = blue bold
+
+[color "diff"]
+	meta = blue bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[push]
+	default = current
+
+[core]
+  quotepath = false
+	editor = vim
+	excludesfile = ~/.gitignore
+
