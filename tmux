@@ -21,11 +21,17 @@ set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=colour16
 
 set -g default-terminal "screen-256color"
 
-
 # Activity
 setw -g monitor-activity on
-set -g visual-activity off
+set -g visual-activity on
 
+unbind C-b
+set -g prefix C-b
+# bind-key <C-a> last-window
+bind -n C-Left select-pane -L
+bind -n C-Right select-pane -R
+bind -n C-Up select-pane -U
+bind -n C-Down select-pane -D
 
 # Mouse stuff                                                                   
 setw -g mode-mouse on                                                           
