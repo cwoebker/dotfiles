@@ -1,9 +1,10 @@
 [user]
 	name = cwoebker
 	email = cwoebker@gmail.com
+
 [github]
 	user = cwoebker
-    	token = xxx
+
 [color]
 	diff = auto
 	status = auto
@@ -24,7 +25,7 @@
 	default = current
 
 [core]
-  quotepath = false
+        quotepath = false
 	editor = vim
 	excludesfile = ~/.gitignore
 
