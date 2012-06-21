@@ -40,6 +40,9 @@ unsetopt correct_all
 # Customize to your needs...
 export PATH=/opt/brew/Cellar/node/0.4.12/bin:/Users/cwoebker/.pythonbrew/bin:/Users/cwoebker/.pythonbrew/bin:/Users/cwoebker/.rbenv/shims:/opt/brew/sbin:/opt/brew/bin:/opt/hubot/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/usr/texbin:/opt/local/bin
 
+# PythonPath
+export PYTHONPATH=/opt/brew/lib/python2.7/site-packages:$PYTHONPATH
+
 #[[ -s "/Users/cwoebker/.rvm/scripts/rvm" ]] && source "/Users/cwoebker/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # rbenv
