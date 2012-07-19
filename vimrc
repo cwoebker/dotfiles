@@ -7,6 +7,8 @@ set encoding=utf-8
 set showcmd                         " display incomplete commands
 filetype plugin indent on           " load file type plugins + indentation
 
+set ofu=syntaxcomplete#Complete
+
 "" Whitespace
 set nowrap                          " don't wrap lines
 set tabstop=4 shiftwidth=4          " a tab is two spaces (or set this to 4)
@@ -52,6 +54,12 @@ map <C-h> <C-w><Left>
 " Switch to alternate file
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
+
+" Tab completion and alike
+imap <Tab> <C-P>
+set complete=.,b,u,]
+set wildmode=longest,list:longest
+set completeopt=menu,preview
 
 "" Mapping 
 let mapleader = ","                 " setting leader to , 

@@ -21,6 +21,7 @@ ln -s ~/Dropbox/Code/dotfiles/gvimrc ~/.gvimrc
 ln -s ~/Dropbox/Code/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/Dropbox/Code/dotfiles/gitignore ~/.gitignore
 ln -s ~/Dropbox/Code/dotfiles/tmux ~/.tmux.conf
+ln -s ~/Dropbox/Code/dotfiles/cwoebker.zsh-theme ~/.oh-my-zsh/themes/cwoebker.zsh-theme 
 
 echo "Updating submodules"
 git submodule foreach git pull origin master --recurse-submodules
