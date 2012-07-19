@@ -43,8 +43,6 @@ export PATH=/opt/brew/Cellar/node/0.4.12/bin:/Users/cwoebker/.pythonbrew/bin:/Us
 # PythonPath
 export PYTHONPATH=/opt/brew/lib/python2.7/site-packages:$PYTHONPATH
 
-#[[ -s "/Users/cwoebker/.rvm/scripts/rvm" ]] && source "/Users/cwoebker/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
 # rbenv
 eval "$(rbenv init -)"
 
@@ -68,4 +66,24 @@ source "`brew --prefix`/etc/grc.bashrc"
 
 # Terminal 256 colors
 export TERM="xterm-256color"
+
+# Aliases
+
+alias cs='cd ~/Dropbox/Summer\ 2012/CS107/'
+alias cat='ccat'
+
+# Custom Functions
+
+function ccat() {
+    #!/bin/zsh#
+    if [ ! -t 0 ];then
+            file=/dev/stdin
+    elif [ -f $1 ];then
+            file=$1
+    else
+            echo "Usage: $0 code.c"
+            echo "or e.g. head code.c|$0"
+    fi
+    pygmentize -f terminal -g $file 
+}
 
