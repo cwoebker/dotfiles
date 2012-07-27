@@ -64,6 +64,19 @@ export ANDROID_SDK_ROOT=/opt/brew/Cellar/android-sdk/r17
 # grc
 source "`brew --prefix`/etc/grc.bashrc"
 
+# simple python server
+function server() {
+  local port=8000
+  open "http://localhost:$port/"
+  python -m SimpleHTTPServer "$port"
+}
+
+# z - cd replacement - smart
+. `brew --prefix`/etc/profile.d/z.sh
+function precmd () {
+  z --add "$(pwd -P)"
+}
+
 # Terminal 256 colors
 export TERM="xterm-256color"
 
