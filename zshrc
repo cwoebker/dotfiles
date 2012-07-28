@@ -37,17 +37,37 @@ plugins=(cwoebker brew cloudapp django fabric gem git github heroku osx pip pyth
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
+# Terminal 256 colors
+export TERM="xterm-256color"
+
+##### PATH #####
+
 # Customize to your needs...
-export PATH=/opt/brew/Cellar/node/0.4.12/bin:/Users/cwoebker/.pythonbrew/bin:/Users/cwoebker/.pythonbrew/bin:/Users/cwoebker/.rbenv/shims:/opt/brew/sbin:/opt/brew/bin:/opt/hubot/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/usr/texbin:/opt/local/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+# Homebrew
+export PATH=/opt/brew/sbin:/opt/brew/bin:$PATH
+# rbenv
+export PATH=/Users/cwoebker/.rbenv/shims:$PATH
+# pythonbrew
+export PATH=/Users/cwoebker/.pythonbrew/bin:$PATH
+# node
+export PATH=/opt/brew/Cellar/node/0.4.12/bin:$PATH
+# tex
+export PATH=$PATH:/usr/texbin
 
 # PythonPath
 export PYTHONPATH=/opt/brew/lib/python2.7/site-packages:$PYTHONPATH
 
-# rbenv
-eval "$(rbenv init -)"
+
+##### PYTHON #####
 
 # pythonbrew
 source /Users/cwoebker/.pythonbrew/etc/bashrc
+
+# PIP & Virtualenv
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # Virtualenv Wrapper
 if [ `id -u` != '0' ]; then
@@ -58,18 +78,18 @@ if [ `id -u` != '0' ]; then
   export PIP_RESPECT_VIRTUALENV=true
 fi
 
+##### RUBY #####
+
+# rbenv
+eval "$(rbenv init -)"
+
+##### Tools & Utilities #####
+
 # brew android sdk
 export ANDROID_SDK_ROOT=/opt/brew/Cellar/android-sdk/r17
 
 # grc
 source "`brew --prefix`/etc/grc.bashrc"
-
-# simple python server
-function server() {
-  local port=8000
-  open "http://localhost:$port/"
-  python -m SimpleHTTPServer "$port"
-}
 
 # z - cd replacement - smart
 . `brew --prefix`/etc/profile.d/z.sh
@@ -77,15 +97,12 @@ function precmd () {
   z --add "$(pwd -P)"
 }
 
-# Terminal 256 colors
-export TERM="xterm-256color"
-
 # Aliases
 
 alias cs='cd ~/Dropbox/Summer\ 2012/CS107/'
 alias cat='ccat'
 
-# Custom Functions
+##### Custom Functions #####
 
 function ccat() {
     #!/bin/zsh#
@@ -100,3 +117,9 @@ function ccat() {
     pygmentize -f terminal -g $file 
 }
 
+# simple python server
+function server() {
+  local port=8000
+  open "http://localhost:$port/"
+  python -m SimpleHTTPServer "$port"
+}
