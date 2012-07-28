@@ -1,0 +1,5 @@
+#!/bin/bash
+# This hook is run after every virtualenv is deactivated.
+
+#RPROMPT="$_OLD_RPROMPT"
+PYTHON_ENV_EXT=''
