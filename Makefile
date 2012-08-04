@@ -1,14 +1,15 @@
 install: install-bin install-shell install-vim install-git \
-			install-virtualenvwrapper install-python
+			install-virtualenvwrapper install-python \
+			install-finish
 
 # Manage
 
 clean:
 
 init:
-	echo "Initializing git submodules..."
-	git submodule init
-	git submodule update
+	@echo "Initializing git submodules..."
+	@git submodule init
+	@git submodule update
 
 backup:
 	@echo "Backing up old configuration files..."
@@ -18,6 +19,11 @@ backup:
 	@mv ~/.gitconfig ~/.gitconfig-bak
 	@mv ~/.gitignore ~/.gitignore-bak
 	@mv ~/.tmux.conf ~/.tmux.conf-bak
+
+# Fixes
+
+permissions:
+	chmod u+x bin/*
 
 # Extras
 
@@ -29,10 +35,14 @@ backup:
 
 # General
 
+init-install:
+	@echo "Installing cwoebker's dotfiles..."
+	@echo "---------------------------------"
+	@echo " "
+
 install-bin:
 	@echo "Installing binary files..."
-	@mkdir -p ~/.bin/
-	@ln -fs `pwd`/bin/* ~/.bin/
+	@ln -fs `pwd`/bin ~/.bin
 
 install-shell:
 	@echo "Installing shell configs..."
@@ -42,7 +52,7 @@ install-shell:
 	@ln -fs `pwd`/shell/cwoebker.zsh-theme ~/.oh-my-zsh/themes/cwoebker.zsh-theme
 
 install-vim:
-	@echo "Linking vim config..."
+	@echo "Linking vim setup..."
 	@ln -fs `pwd`/vim ~/.vim
 	@echo "Updating vim plugins..."
 	@echo "-----------------------"
@@ -62,3 +72,7 @@ install-virtualenvwrapper:
 install-python:
 	@echo "Installing python configs..."
 	@ln -fs `pwd`/python/pythonrc.py ~/.pythonrc.py
+
+install-finish:
+	@echo "--------------------------------------------"
+	@echo "Installtion of cwoebker's dotfiles complete!"
