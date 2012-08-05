@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(cwoebker brew cloudapp django fabric gem git github heroku osx pip python rbenv redis-cli ruby textmate vagrant)
+plugins=(cwoebker brew fabric gem git github heroku osx pip python rbenv redis-cli ruby vagrant)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -51,13 +51,15 @@ export PATH=/Users/cwoebker/.rbenv/shims:$PATH
 # pythonbrew
 export PATH=/Users/cwoebker/.pythonbrew/bin:$PATH
 # node
-export PATH=/opt/brew/Cellar/node/0.4.12/bin:$PATH
+export PATH=/opt/brew/Cellar/node/0.8.5/bin:$PATH
 # tex
 export PATH=$PATH:/usr/texbin
 
 # PythonPath
 export PYTHONPATH=/opt/brew/lib/python2.7/site-packages:$PYTHONPATH
 
+# NODE_PATH
+export NODE_PATH=/opt/brew/lib/node_modules:$NODE_PATH
 
 ##### PYTHON #####
 

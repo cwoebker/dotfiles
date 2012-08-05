@@ -12,14 +12,14 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[yellow]%} ✚"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✹"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[yellow]%} ✖"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[yellow]%} ➜"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[yellow]%} ✭"
+#ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[yellow]%} ✚"
+#ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✹"
+#ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[yellow]%} ✖"
+#ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[yellow]%} ➜"
+#ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
+#ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[yellow]%} ✭"
 #$(git_prompt_status)
 
 PROMPT="${time} ${user} ${pwd} ${prompt} % %{$reset_color%}"
 
-RPROMPT="${python_info} $(git_prompt_info) $(git_prompt_status) !%{$fg_bold[cyan]%}%h%{$reset_color%}"
+RPROMPT="$(git_prompt_info) ${python_info} !%{$fg_bold[cyan]%}%h%{$reset_color%}"
