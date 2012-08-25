@@ -47,13 +47,15 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 # Homebrew
 export PATH=/opt/brew/sbin:/opt/brew/bin:$PATH
 # rbenv
-export PATH=/Users/cwoebker/.rbenv/shims:$PATH
+export PATH=$HOME/.rbenv/shims:$PATH
 # pythonbrew
-export PATH=/Users/cwoebker/.pythonbrew/bin:$PATH
+export PATH=$HOME/.pythonbrew/bin:$PATH
 # node
 export PATH=/opt/brew/Cellar/node/0.8.5/bin:$PATH
 # tex
 export PATH=$PATH:/usr/texbin
+# dotfiles
+export PATH=$HOME/.bin:$PATH
 
 # PythonPath
 export PYTHONPATH=/opt/brew/lib/python2.7/site-packages:$PYTHONPATH
@@ -64,7 +66,7 @@ export NODE_PATH=/opt/brew/lib/node_modules:$NODE_PATH
 ##### PYTHON #####
 
 # pythonbrew
-source /Users/cwoebker/.pythonbrew/etc/bashrc
+source $HOME/.pythonbrew/etc/bashrc
 
 # PIP & Virtualenv
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
