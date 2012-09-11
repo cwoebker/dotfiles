@@ -17,6 +17,16 @@ set backspace=indent,eol,start      " backspace through everything in insert mod
 set autoindent
 set smarttab
 
+"" Highlight spaces and tabs
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+"" Mouse
+set mouse=a
+
+"" Leader
+let mapleader = ","
+
 "" History
 set history=1000
 set undolevels=1000
@@ -72,8 +82,6 @@ let g:pymode_lint_onfly = 1         " python-mode
 let g:pymode_doc_key = 'K'
 
 set laststatus=2                    " Always show the statusline
-
-set mouse=a
 
 " Enable fancy mode 
 let g:Powerline_symbols = 'fancy'   " Powerline
