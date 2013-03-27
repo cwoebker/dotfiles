@@ -31,10 +31,12 @@ Thumbs.db
 ###########
 *.sublime-project
 *.sublime-workspace
+.idea
 
 # Python #
 ##########
 *.py[cod]
+fabfile.py
 
 # C extensions
 *.so
