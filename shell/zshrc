@@ -70,6 +70,9 @@ export NODE_PATH=/opt/brew/lib/node_modules:$NODE_PATH
 # pythonbrew
 source $HOME/.pythonbrew/etc/bashrc
 
+# pythonZ
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+
 # PIP & Virtualenv
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
@@ -83,6 +86,9 @@ if [ `id -u` != '0' ]; then
   export PIP_VIRTUALENV_BASE=$WORKON_HOME
   export PIP_RESPECT_VIRTUALENV=true
 fi
+
+# PyPi
+export PATH=$PATH:/opt/brew/Cellar/pypy/1.9/bin
 
 ##### RUBY #####
 
@@ -120,7 +126,7 @@ function ccat() {
             echo "Usage: $0 code.c"
             echo "or e.g. head code.c|$0"
     fi
-    pygmentize -f terminal -g $file 
+    pygmentize -f terminal -g $file
 }
 
 # simple python server
