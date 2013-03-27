@@ -22,4 +22,5 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 PROMPT="${time} ${user} ${pwd} ${prompt} % %{$reset_color%}"
 
-RPROMPT="$(git_prompt_info) ${python_info} !%{$fg_bold[cyan]%}%h%{$reset_color%}"
+#${python_info}
+RPROMPT="$(git_prompt_info) !%{$fg_bold[cyan]%}%h%{$reset_color%}"
