@@ -51,7 +51,7 @@ export PATH=$HOME/.rbenv/shims:$PATH
 # pythonbrew
 export PATH=$HOME/.pythonbrew/bin:$PATH
 # node
-export PATH=/opt/brew/Cellar/node/0.8.5/bin:$PATH
+export PATH=/opt/brew/share/npm/bin:$PATH
 # tex
 export PATH=$PATH:/usr/texbin
 # dotfiles
@@ -71,7 +71,7 @@ export NODE_PATH=/opt/brew/lib/node_modules:$NODE_PATH
 source $HOME/.pythonbrew/etc/bashrc
 
 # pythonZ
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+#[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
 # PIP & Virtualenv
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
@@ -87,7 +87,7 @@ if [ `id -u` != '0' ]; then
   export PIP_RESPECT_VIRTUALENV=true
 fi
 
-# PyPi
+# PyPy
 export PATH=$PATH:/opt/brew/Cellar/pypy/1.9/bin
 
 ##### RUBY #####
@@ -98,10 +98,10 @@ eval "$(rbenv init -)"
 ##### Tools & Utilities #####
 
 # brew android sdk
-export ANDROID_SDK_ROOT=/opt/brew/Cellar/android-sdk/r17
+#export ANDROID_SDK_ROOT=/opt/brew/Cellar/android-sdk/r17
 
 # grc
-source "`brew --prefix`/etc/grc.bashrc"
+#source "`brew --prefix`/etc/grc.bashrc"
 
 # z - cd replacement - smart
 . `brew --prefix`/etc/profile.d/z.sh
@@ -111,7 +111,7 @@ function precmd () {
 
 # Aliases
 
-alias cs='cd ~/Dropbox/Summer\ 2012/CS107/'
+#alias cs='cd ~/Dropbox/Summer\ 2012/CS107/'
 alias cat='ccat'
 
 ##### Custom Functions #####
