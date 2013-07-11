@@ -59,9 +59,6 @@ export PATH=$HOME/.bin:$PATH
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# PythonPath
-export PYTHONPATH=/opt/brew/lib/python2.7/site-packages:$PYTHONPATH
-
 # NODE_PATH
 export NODE_PATH=/opt/brew/lib/node_modules:$NODE_PATH
 
@@ -89,6 +86,13 @@ fi
 
 # PyPy
 export PATH=$PATH:/opt/brew/Cellar/pypy/1.9/bin
+
+# PythonPath
+export PYTHONPATH=/opt/brew/lib/python2.7/site-packages:$PYTHONPATH
+
+export PYTHONPATH=/opt/brew/opt/wxmac/lib/python2.7/site-packages:$PYTHONPATH
+
+
 
 ##### RUBY #####
 
