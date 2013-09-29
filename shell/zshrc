@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(cwoebker brew fabric gem git github heroku osx pip python rbenv redis-cli ruby vagrant)
+plugins=(cwoebker brew fabric gem git github heroku osx pip python redis-cli ruby vagrant)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -43,32 +43,20 @@ export TERM="xterm-256color"
 ##### PATH #####
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
-# Homebrew
-export PATH=/opt/brew/sbin:/opt/brew/bin:$PATH
-# rbenv
-export PATH=$HOME/.rbenv/shims:$PATH
-# pythonbrew
-export PATH=$HOME/.pythonbrew/bin:$PATH
-# node
-export PATH=/opt/brew/share/npm/bin:$PATH
-# tex
-export PATH=$PATH:/usr/texbin
+
 # dotfiles
 export PATH=$HOME/.bin:$PATH
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+
+# homebrew priority
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # NODE_PATH
 export NODE_PATH=/opt/brew/lib/node_modules:$NODE_PATH
 
 ##### PYTHON #####
 
-# pythonbrew
-source $HOME/.pythonbrew/etc/bashrc
-
-# pythonZ
-#[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+# pyenv
+#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # PIP & Virtualenv
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
@@ -76,47 +64,33 @@ export PIP_RESPECT_VIRTUALENV=true
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # Virtualenv Wrapper
-if [ `id -u` != '0' ]; then
-  export VIRTUALENV_USE_DISTRIBUTE=1        # <-- Always use pip/distribute
-  export WORKON_HOME=$HOME/.virtualenvs       # <-- Where all virtualenvs will be stored
-  source /usr/local/bin/virtualenvwrapper.sh
-  export PIP_VIRTUALENV_BASE=$WORKON_HOME
-  export PIP_RESPECT_VIRTUALENV=true
-fi
+#if [ `id -u` != '0' ]; then
+#  export VIRTUALENV_USE_DISTRIBUTE=1        # <-- Always use pip/distribute
+#  export WORKON_HOME=$HOME/.virtualenvs       # <-- Where all virtualenvs will be stored
+#  source /usr/local/bin/virtualenvwrapper.sh
+#  export PIP_VIRTUALENV_BASE=$WORKON_HOME
+#  export PIP_RESPECT_VIRTUALENV=true
+#fi
 
 # PyPy
-export PATH=$PATH:/opt/brew/Cellar/pypy/1.9/bin
+#export PATH=$PATH:/opt/brew/Cellar/pypy/1.9/bin
 
-# PythonPath
-export PYTHONPATH=/opt/brew/lib/python2.7/site-packages:$PYTHONPATH
+# PythonPath Homebrew Packages
+#export PYTHONPATH=/opt/brew/lib/python2.7/site-packages:$PYTHONPATH
 
-export PYTHONPATH=/opt/brew/opt/wxmac/lib/python2.7/site-packages:$PYTHONPATH
-
+#export PYTHONPATH=/opt/brew/opt/wxmac/lib/python2.7/site-packages:$PYTHONPATH
 
 
 ##### RUBY #####
 
 # rbenv
-eval "$(rbenv init -)"
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ##### Tools & Utilities #####
 
-# brew android sdk
-#export ANDROID_SDK_ROOT=/opt/brew/Cellar/android-sdk/r17
-
-# grc
-#source "`brew --prefix`/etc/grc.bashrc"
-
-# z - cd replacement - smart
-. `brew --prefix`/etc/profile.d/z.sh
-function precmd () {
-  z --add "$(pwd -P)"
-}
-
 # Aliases
 
-#alias cs='cd ~/Dropbox/Summer\ 2012/CS107/'
-alias cat='ccat'
+# alias cat='ccat'
 
 ##### Custom Functions #####
 
