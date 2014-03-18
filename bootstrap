@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+#
+# bootstrap installs things.
+
+DOTFILES=$HOME/.dotfiles # export? "`pwd`"
+
+set -e
+
+info () {
+  printf "  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+user () {
+  printf "\r  [ \033[0;33m?\033[0m ] $1\n"
+}
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
+
+
+init () {
+  info "Initializing git submodules..."
+  git submodule init
+  git submodule update
+}
+
+backup () {
+  info "Backing up old configuration files..."
+  mv ~/.vimrc ~/.vimrc-bak
+  mv ~/.zshrc ~/.zshrc-bak
+  mv ~/.vim ~/.vim-bak
+  mv ~/.gitconfig ~/.gitconfig-bak
+  mv ~/.gitignore ~/.gitignore-bak
+  mv ~/.tmux.conf ~/.tmux.conf-bak
+}
+
+# General
+install-bin () {
+  info "Installing binary files..."
+  chmod u+x $DOTFILES/bin/*
+  ln -fs $DOTFILES/bin ~/.bin
+}
+install-shell () {
+  info "Installing shell configs..."
+  ln -fs $DOTFILES/shell/zshrc ~/.zshrc
+  ln -fs $DOTFILES/shell/tmux ~/.tmux.conf
+}
+install-oh-my-zsh () {
+  info "Installing oh-my-zsh..."
+  ln -fs $DOTFILES/shell/cwoebker.zsh-theme $DOTFILES/shell/oh-my-zsh/themes/cwoebker.zsh-theme
+  #ln -fs $DOTFILES/shell/oh-my-zsh ~/.oh-my-zsh
+}
+install-vim () {
+  info "Linking vim setup..."
+  ln -fs $DOTFILES/vim/vimrc ~/.vimrc
+  ln -fs $DOTFILES/vim ~/.vim
+  info "Updating vim plugins..."
+  info "-----------------------"
+  git submodule foreach git pull origin master --recurse-submodules
+  info "-----------------------"
+}
+install-atom () {
+  info "Linkiung atom setup..."
+  ln -fs $DOTFILES/atom ~/.atom
+}
+install-git () {
+  info "Installing git configs..."
+  ln -fs $DOTFILES/git/gitconfig ~/.gitconfig
+  ln -fs $DOTFILES/git/gitignore ~/.gitignore
+}
+install-virtualenvwrapper () {
+  info "Installing virtualenvwrapper custom hooks..."
+  mkdir -p ~/.virtualenvs/
+  ln -fs $DOTFILES/virtualenvwrapper/* ~/.virtualenvs/
+}
+
+install () {
+  info "Installing cwoebker's dotfiles..."
+  info "---------------------------------"
+  info " "
+  install-bin
+  install-shell
+  install-oh-my-zsh
+  install-vim
+  install-atom
+  install-git
+  #install-virtualenvwrapper
+  info "--------------------------------------------"
+  success "Installtion of cwoebker's dotfiles complete!"
+}
+
+install
