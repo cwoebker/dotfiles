@@ -22,10 +22,18 @@ Icon?
 .Trashes
 Thumbs.db
 
-# Other #
-#########
+# OSX Dev #
+###########
+
+UserInterfaceState.xcuserstate
 *.pbxuser
+*.perspectivev3
 *.mode[12]v3
+*.mode1v3
+*~
+*~.nib
+*~.xib 
+xcuserdata/
 
 # Editors #
 ###########
@@ -37,6 +45,9 @@ Thumbs.db
 ##########
 *.py[cod]
 fabfile.py
+
+# Other #
+#########
 
 # C extensions
 *.so
