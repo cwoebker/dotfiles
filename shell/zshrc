@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+DOTFILES=$HOME/.dotfiles
+ZSH=$DOTFILES/shell/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -8,7 +9,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="cwoebker"
 
 # Editor settings
-export EDITOR=vim$EDITOR
+export EDITOR=atom$EDITOR
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -18,7 +19,7 @@ export EDITOR=vim$EDITOR
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -39,6 +40,21 @@ unsetopt correct_all
 
 # Terminal 256 colors
 export TERM="xterm-256color"
+
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# all of our zsh files
+typeset -U alias_files
+alias_files=($DOTFILES/**/aliases.zsh)
+for file in ${alias_files}
+do
+  source $file
+done
 
 ##### PATH #####
 
@@ -73,4 +89,3 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # NODE_PATH
 export NODE_PATH=/opt/brew/lib/node_modules:$NODE_PATH
-
