@@ -3,12 +3,13 @@
 'editor':
   'tabLength': 4
   'autoIndent': true
-  'autoIndentOnPaste': false
+  'autoIndentOnPaste': true
   'softWrap': true
   'fontSize': 12
   'showInvisibles': true
   'showIndentGuide': true
   'showLineNumbers': true
+  'softWrapAtPreferredLineLength': true
 'core':
   'themes': [
     'atom-dark-ui'
@@ -29,3 +30,15 @@
 'whitespace':
   'ensureSingleTrailingNewline': true
   'removeTrailingWhitespace': true
+'markdown-preview':
+  'grammars': [
+    'source.gfm'
+    'source.litcoffee'
+    'text.plain'
+    'text.plain.null-grammar'
+  ]
+'autocomplete-plus':
+  'includeCompletionsFromAllBuffers': true
+  'liveCompletion': true
+'autocomplete':
+  'includeCompletionsFromAllBuffers': true
