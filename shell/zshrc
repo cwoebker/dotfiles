@@ -19,7 +19,7 @@ export EDITOR=atom$EDITOR
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -36,18 +36,8 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(cwoebker brew fabric gem git github heroku osx pip python redis-cli ruby vagrant)
 
 source $ZSH/oh-my-zsh.sh
-unsetopt correct_all
-
-# Terminal 256 colors
-export TERM="xterm-256color"
-
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
+source $DOTFILES/shell/config.zsh
+source $DOTFILES/shell/path.zsh
 # all of our zsh files
 typeset -U alias_files
 alias_files=($DOTFILES/**/aliases.zsh)
@@ -55,37 +45,10 @@ for file in ${alias_files}
 do
   source $file
 done
-
-##### PATH #####
-
-# Customize to your needs...
-
-# homebrew priority
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-# dotfiles
-export PATH=$HOME/.bin:$PATH
-
-##### PYTHON #####
-
-# pyenv
-export PYENV_ROOT=/usr/local/opt/pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# PIP & Virtualenv
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
-export VIRTUAL_ENV_DISABLE_PROMPT=true
-
-##### RUBY #####
-
-# rbenv
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-#Homebrew Gems Install
-export PATH=/usr/local/opt/ruby/bin:$PATH
-
-##### NODE #####
-
-# NODE_PATH
-export NODE_PATH=/opt/brew/lib/node_modules:$NODE_PATH
+unset alias_files
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
