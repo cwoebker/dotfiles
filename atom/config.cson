@@ -9,7 +9,6 @@
   'showInvisibles': true
   'showIndentGuide': true
   'showLineNumbers': true
-  'softWrapAtPreferredLineLength': true
 'core':
   'themes': [
     'atom-dark-ui'
@@ -42,3 +41,4 @@
   'liveCompletion': true
 'autocomplete':
   'includeCompletionsFromAllBuffers': true
+'jshint': {}
