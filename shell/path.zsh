@@ -3,6 +3,9 @@
 
 # Customize to your needs...
 
+#Homebrew Gems Install
+export PATH=/usr/local/opt/ruby/bin:$PATH
+
 # homebrew priority
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
@@ -23,10 +26,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 ##### RUBY #####
 
 # rbenv
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-#Homebrew Gems Install
-export PATH=/usr/local/opt/ruby/bin:$PATH
+export RBENV_ROOT=/usr/local/opt/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ##### NODE #####
 
