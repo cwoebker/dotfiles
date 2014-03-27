@@ -1,5 +1,6 @@
 ice
 scripts
+bin
 atom/packages
 atom/storage
 atom/.node-gyp

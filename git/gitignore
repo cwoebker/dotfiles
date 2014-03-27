@@ -32,7 +32,7 @@ UserInterfaceState.xcuserstate
 *.mode1v3
 *~
 *~.nib
-*~.xib 
+*~.xib
 xcuserdata/
 
 # Editors #
@@ -45,6 +45,11 @@ xcuserdata/
 ##########
 *.py[cod]
 fabfile.py
+
+# Node #
+########
+node_modules
+bower_components
 
 # Other #
 #########
@@ -59,12 +64,10 @@ dist
 build
 eggs
 parts
-bin
 var
 sdist
 develop-eggs
 .installed.cfg
-lib
 lib64
 
 # Installer logs
@@ -80,4 +83,3 @@ nosetests.xml
 
 #Mr Developer
 .mr.developer.cfg
-
