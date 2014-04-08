@@ -59,7 +59,6 @@ install-oh-my-zsh () {
 }
 install-vim () {
   info "Linking vim setup..."
-  ln -fs $DOTFILES/vim/vimrc ~/.vimrc
   ln -fs $DOTFILES/vim ~/.vim
   info "Updating vim plugins..."
   info "-----------------------"
