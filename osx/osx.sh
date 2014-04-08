@@ -34,6 +34,33 @@ echo "System"
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Restart automatically if the computer freezes
+systemsetup -setrestartfreeze on
+
+# Never go into computer sleep mode
+systemsetup -setcomputersleep Off > /dev/null
+
+###############################################################################
+# SSD-specific tweaks                                                         #
+###############################################################################
+echo "SSD"
+
+# Disable local Time Machine snapshots
+sudo tmutil disablelocal
+
+# Disable hibernation (speeds up entering sleep mode)
+sudo pmset -a hibernatemode 0
+
+# Remove the sleep image file to save disk space
+sudo rm /Private/var/vm/sleepimage
+# Create a zero-byte file instead…
+sudo touch /Private/var/vm/sleepimage
+# …and make sure it can’t be rewritten
+sudo chflags uchg /Private/var/vm/sleepimage
+
+# Disable the sudden motion sensor as it’s not useful for SSDs
+sudo pmset -a sms 0
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -98,12 +125,6 @@ defaults write com.apple.helpviewer DevMode -bool true
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-
-# Restart automatically if the computer freezes
-systemsetup -setrestartfreeze on
-
-# Never go into computer sleep mode
-systemsetup -setcomputersleep Off > /dev/null
 
 # Check for software updates every two days, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 2
@@ -170,6 +191,9 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Finder: hide everything on desktop
+#defaults write com.apple.finder CreateDesktop -bool false && killall Finder
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
