@@ -32,4 +32,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 ##### NODE #####
 
 # NODE_PATH
-export NODE_PATH=/opt/brew/lib/node_modules:$NODE_PATH
+export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+
+##### GO ######
+
+export GOPATH=$HOME/Code/go
+export PATH=$PATH:$GOPATH/bin
+
