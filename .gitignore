@@ -3,5 +3,6 @@ scripts
 bin
 atom/packages
 atom/storage
+atom/compile-cache
 atom/.node-gyp
 TODO
