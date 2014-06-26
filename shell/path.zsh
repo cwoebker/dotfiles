@@ -24,6 +24,8 @@ export PATH=$HOME/.bin:$PATH
 export PYENV_ROOT=/usr/local/opt/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
+eval "$(pyenv virtualenv-init -)"
+
 # PIP & Virtualenv
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
@@ -44,4 +46,3 @@ export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 
 export GOPATH=$HOME/Code/go
 export PATH=$PATH:$GOPATH/bin
-
