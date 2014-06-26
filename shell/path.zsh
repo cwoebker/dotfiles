@@ -3,6 +3,12 @@
 
 # Customize to your needs...
 
+# Reset PATH to keep it from being clobbered in tmux
+if [ -x /usr/libexec/path_helper ]; then
+    PATH=''
+    source /etc/zshenv
+fi
+
 #Homebrew Gems Install
 export PATH=/usr/local/opt/ruby/bin:$PATH
 
