@@ -51,6 +51,7 @@ install-shell () {
   info "Installing shell configs..."
   ln -fs $DOTFILES/shell/zshrc ~/.zshrc
   ln -fs $DOTFILES/shell/tmux ~/.tmux.conf
+  ln -fs $DOTFILES/shell/tmuxinator ~/.tmuxinator
 }
 install-oh-my-zsh () {
   info "Installing oh-my-zsh..."

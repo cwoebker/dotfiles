@@ -1,6 +1,7 @@
 ice
 scripts
 bin
+shell/tmuxinator/*.yml
 atom/packages
 atom/storage
 atom/compile-cache
