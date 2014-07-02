@@ -37,3 +37,5 @@
 'autocomplete':
   'includeCompletionsFromAllBuffers': true
 'jshint': {}
+'file-types':
+  'jsx': 'text.js'
