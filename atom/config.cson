@@ -14,7 +14,15 @@
     'atom-dark-ui'
     'base16-tomorrow-dark-theme'
   ]
-  'projectHome': '/Users/cwoebker/Dropbox/Code'
+  'projectHome': '/Users/cwoebker/Code'
+  'useReactEditor': true
+  'ignoredNames': [
+    '*.pyc'
+  ]
+  'disabledPackages': [
+    'welcome'
+    'jshint'
+  ]
 'exception-reporting':
   'userId': '5c9446b9-5451-6749-2d7f-6f3df5d3685c'
 'release-notes':

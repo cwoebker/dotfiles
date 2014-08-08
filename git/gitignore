@@ -45,6 +45,8 @@ xcuserdata/
 ##########
 *.py[cod]
 fabfile.py
+# Pyenv
+.python-version
 
 # Node #
 ########
