@@ -44,7 +44,9 @@ xcuserdata/
 # Python #
 ##########
 *.py[cod]
+*.egg-info
 fabfile.py
+
 # Pyenv
 .python-version
 
