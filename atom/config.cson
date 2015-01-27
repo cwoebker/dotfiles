@@ -1,49 +1,45 @@
-'welcome':
-  'showOnStartup': false
-'editor':
-  'tabLength': 4
-  'autoIndent': true
-  'autoIndentOnPaste': true
-  'softWrap': true
-  'fontSize': 12
-  'showInvisibles': true
-  'showIndentGuide': true
-  'showLineNumbers': true
-'core':
-  'themes': [
-    'atom-dark-ui'
-    'base16-tomorrow-dark-theme'
-  ]
-  'projectHome': '/Users/cwoebker/Code'
-  'useReactEditor': true
-  'ignoredNames': [
-    '*.pyc'
-  ]
-  'disabledPackages': [
-    'welcome'
-    'jshint'
-  ]
-'exception-reporting':
-  'userId': '5c9446b9-5451-6749-2d7f-6f3df5d3685c'
-'release-notes':
-  'viewedVersion': '0.95.0'
-'metrics':
-  'userId': 'fe53b692cd647baa062280033e814deddea25df0'
-'whitespace':
-  'ensureSingleTrailingNewline': true
-  'removeTrailingWhitespace': true
-'markdown-preview':
-  'grammars': [
-    'source.gfm'
-    'source.litcoffee'
-    'text.plain'
-    'text.plain.null-grammar'
-  ]
-'autocomplete-plus':
-  'includeCompletionsFromAllBuffers': true
-  'liveCompletion': true
-'autocomplete':
-  'includeCompletionsFromAllBuffers': true
-'jshint': {}
-'file-types':
-  'jsx': 'text.js'
+"*":
+  welcome:
+    showOnStartup: false
+  editor:
+    fontSize: 12
+    showInvisibles: true
+    showIndentGuide: true
+    autoIndentOnPaste: true
+    tabLength: 4
+    softWrap: true
+    invisibles: {}
+  core:
+    ignoredNames: [
+      "*.pyc"
+    ]
+    disabledPackages: [
+      "welcome"
+      "jshint"
+      "atom-lint"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+    projectHome: "/Users/cwoebker/Code"
+  "exception-reporting":
+    userId: "5c9446b9-5451-6749-2d7f-6f3df5d3685c"
+  "release-notes":
+    viewedVersion: "0.95.0"
+  metrics:
+    userId: "fe53b692cd647baa062280033e814deddea25df0"
+  "markdown-preview":
+    grammars: [
+      "source.gfm"
+      "source.litcoffee"
+      "text.plain"
+      "text.plain.null-grammar"
+    ]
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: true
+  autocomplete:
+    includeCompletionsFromAllBuffers: true
+  "file-types":
+    jsx: "text.js"
+  linter: {}
