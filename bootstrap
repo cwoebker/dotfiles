@@ -55,7 +55,7 @@ install-shell () {
 }
 install-oh-my-zsh () {
   info "Installing oh-my-zsh..."
-  ln -fs $DOTFILES/shell/cwoebker.zsh-theme $DOTFILES/shell/oh-my-zsh/themes/cwoebker.zsh-theme
+  ln -fs ../../cwoebker.zsh-theme $DOTFILES/shell/oh-my-zsh/themes/cwoebker.zsh-theme
   #ln -fs $DOTFILES/shell/oh-my-zsh ~/.oh-my-zsh
 }
 install-vim () {
