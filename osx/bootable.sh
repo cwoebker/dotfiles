@@ -1,1 +1,1 @@
-sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/ORBIT --applicationpath /Applications/Install\ OS\ X\ Mavericks.app --nointeraction
+sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/NATHANS --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
