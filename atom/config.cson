@@ -17,6 +17,9 @@
       "welcome"
       "jshint"
       "atom-lint"
+      "Zen"
+      "command-logger"
+      "editor-stats"
     ]
     themes: [
       "atom-dark-ui"
@@ -43,3 +46,5 @@
   "file-types":
     jsx: "text.js"
   linter: {}
+  "atom-spotify":
+    showEqualizer: true
