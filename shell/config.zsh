@@ -1,12 +1,17 @@
 # Terminal 256 colors
-export TERM="xterm-256color"
+export TERM="xterm-256color";
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+export HISTSIZE=32768;
+export SAVEHIST=$HISTSIZE;
+export HISTFILESIZE=$HISTSIZE;
+export HISTCONTROL=ignoredups;
 
 unsetopt correct_all
-
+setopt RM_STAR_WAIT
 setopt EXTENDED_HISTORY # add timestamps to history
 
 # don't expand aliases _before_ completion has finished
