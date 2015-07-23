@@ -48,9 +48,14 @@ do
   source $file
 done
 unset alias_files
+
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
+
+# zsh-completions - slow plugin
+# makes it slow?: autoload -U compinit && compinit
+

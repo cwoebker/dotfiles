@@ -9,6 +9,8 @@
     tabLength: 4
     softWrap: true
     invisibles: {}
+    scrollPastEnd: true
+    softWrapHangingIndent: 2
   core:
     ignoredNames: [
       "*.pyc"
@@ -20,9 +22,12 @@
       "Zen"
       "command-logger"
       "editor-stats"
+      "metrics"
+      "visual-bell"
+      "vim-mode"
     ]
     themes: [
-      "atom-dark-ui"
+      "isotope-ui"
       "base16-tomorrow-dark-theme"
     ]
     projectHome: "/Users/cwoebker/Code"
@@ -45,6 +50,23 @@
     includeCompletionsFromAllBuffers: true
   "file-types":
     jsx: "text.js"
-  linter: {}
+  linter:
+    subtleLinterErrors: [
+      "pylint"
+    ]
+    showInfoMessages: true
+    statusBar: "Show all errors"
+    clearOnChange: true
   "atom-spotify":
     showEqualizer: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  minimap: {}
+  "atom-spotify2":
+    showPlayIconAsText: true
+    showEqualizer: true
+  "atom-beautify":
+    _analyticsUserId: "3642e622-79d9-4dec-ba67-afd737c057c8"
+  "linter-pylint":
+    executable: "/usr/local/opt/pyenv/versions/default/bin/pylint"
+  "vim-mode": {}

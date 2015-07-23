@@ -23,7 +23,6 @@ export PATH=$HOME/.bin:$PATH
 # pyenv
 export PYENV_ROOT=/usr/local/opt/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
 eval "$(pyenv virtualenv-init -)"
 
 # PIP & Virtualenv
