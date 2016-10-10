@@ -10,6 +10,8 @@ export SAVEHIST=$HISTSIZE;
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
 
+export HOMEBREW_NO_ANALYTICS=1
+
 unsetopt correct_all
 setopt RM_STAR_WAIT
 setopt EXTENDED_HISTORY # add timestamps to history
