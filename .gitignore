@@ -5,6 +5,7 @@ shell/tmuxinator/*.yml
 atom/packages
 atom/storage
 atom/compile-cache
+atom/blob-store
 atom/.node-gyp
 atom/.apm
 TODO
