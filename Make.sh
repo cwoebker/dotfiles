@@ -44,31 +44,35 @@ backup () {
 # General
 install-bin () {
   info "Installing binary files..."
-  chmod u+x $DOTFILES/bin/*
-  ln -fs $DOTFILES/bin ~/.bin
+  chmod u+x $DOTFILES/custom/bin/*
+  ln -fs $DOTFILES/custom/bin ~/.bin
 }
 install-shell () {
   info "Installing shell configs..."
   ln -fs $DOTFILES/shell/zshrc ~/.zshrc
   ln -fs $DOTFILES/shell/tmux ~/.tmux.conf
-  ln -fs $DOTFILES/shell/tmuxinator ~/.tmuxinator
+  ln -fs $DOTFILES/custom/tmuxinator ~/.tmuxinator
 }
 install-oh-my-zsh () {
   info "Installing oh-my-zsh..."
   ln -fs ../../cwoebker.zsh-theme $DOTFILES/shell/oh-my-zsh/themes/cwoebker.zsh-theme
-  #ln -fs $DOTFILES/shell/oh-my-zsh ~/.oh-my-zsh
+  ln -fs $DOTFILES/shell/oh-my-zsh ~/.oh-my-zsh
 }
 install-vim () {
   info "Linking vim setup..."
-  ln -fs $DOTFILES/vim ~/.vim
+  ln -fs $DOTFILES/editor/vim ~/.vim
   info "Updating vim plugins..."
   info "-----------------------"
-  git submodule foreach git pull origin master --recurse-submodules
+  #git submodule foreach git pull origin master --recurse-submodules
   info "-----------------------"
 }
 install-atom () {
   info "Linkiung atom setup..."
-  ln -fs $DOTFILES/atom ~/.atom
+  ln -fs $DOTFILES/editor/atom ~/.atom
+}
+install-sublime () {
+  info "Linking sublime settings..."
+  ln -fs $DOTFILES/editor/sublime/Preferences.sublime-settings "/Users/cwoebker/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
 }
 install-git () {
   info "Installing git configs..."
@@ -78,7 +82,7 @@ install-git () {
 install-virtualenvwrapper () {
   info "Installing virtualenvwrapper custom hooks..."
   mkdir -p ~/.virtualenvs/
-  ln -fs $DOTFILES/virtualenvwrapper/* ~/.virtualenvs/
+  ln -fs $DOTFILES/custom/virtualenvwrapper/* ~/.virtualenvs/
 }
 
 install () {
@@ -90,6 +94,7 @@ install () {
   install-oh-my-zsh
   install-vim
   install-atom
+  install-sublime
   install-git
   #install-virtualenvwrapper
   info "--------------------------------------------"
