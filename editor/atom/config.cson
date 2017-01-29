@@ -1,0 +1,71 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "3642e622-79d9-4dec-ba67-afd737c057c8"
+  "atom-spotify":
+    showEqualizer: true
+  "atom-spotify2":
+    showEqualizer: true
+    showPlayIconAsText: true
+  autocomplete:
+    includeCompletionsFromAllBuffers: true
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: true
+  core:
+    disabledPackages: [
+      "welcome"
+      "atom-lint"
+      "Zen"
+      "command-logger"
+      "editor-stats"
+      "metrics"
+      "visual-bell"
+    ]
+    ignoredNames: [
+      "*.pyc"
+    ]
+    projectHome: "/Users/cwoebker/Code"
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    autoIndentOnPaste: true
+    fontSize: 12
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    softWrapHangingIndent: 2
+    tabLength: 4
+  "exception-reporting":
+    userId: "5c9446b9-5451-6749-2d7f-6f3df5d3685c"
+  "file-types":
+    jsx: "text.js"
+  linter:
+    clearOnChange: true
+    showInfoMessages: true
+    statusBar: "Show all errors"
+    subtleLinterErrors: [
+      "pylint"
+    ]
+  "linter-pylint":
+    executable: "/usr/local/opt/pyenv/versions/default/bin/pylint"
+  "markdown-preview":
+    grammars: [
+      "source.gfm"
+      "source.litcoffee"
+      "text.plain"
+      "text.plain.null-grammar"
+    ]
+  metrics:
+    userId: "fe53b692cd647baa062280033e814deddea25df0"
+  minimap: {}
+  "release-notes":
+    viewedVersion: "0.95.0"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false

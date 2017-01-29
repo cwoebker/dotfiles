@@ -2,10 +2,11 @@ ice
 scripts
 bin
 shell/tmuxinator/*.yml
-atom/packages
-atom/storage
-atom/compile-cache
-atom/blob-store
-atom/.node-gyp
-atom/.apm
 TODO
+editor/atom/packages
+editor/atom/storage
+editor/atom/recovery
+editor/atom/compile-cache
+editor/atom/blob-store
+editor/atom/.node-gyp
+editor/atom/.apm
