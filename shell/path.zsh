@@ -21,7 +21,7 @@ export PATH=$HOME/.bin:$PATH
 ##### PYTHON #####
 
 # pyenv
-export PYENV_ROOT=/usr/local/opt/pyenv
+# export PYENV_ROOT=/usr/local/opt/pyenv # default is ~/.pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 eval "$(pyenv virtualenv-init -)"
 
@@ -33,7 +33,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 ##### RUBY #####
 
 # rbenv
-export RBENV_ROOT=/usr/local/opt/rbenv
+# export RBENV_ROOT=/usr/local/opt/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ##### NODE #####
