@@ -1,8 +1,4 @@
-ice
-scripts
-bin
-shell/tmuxinator/*.yml
-TODO
+custom
 editor/atom/packages
 editor/atom/storage
 editor/atom/recovery
