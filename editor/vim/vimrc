@@ -25,7 +25,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set mouse=a
 
 "" Leader
-let mapleader = ","
+let mapleader = ","					" setting leader to , 
 
 "" History
 set history=1000
@@ -39,7 +39,7 @@ set noswapfile
 
 "SWAGG
 set paste                           " setting good paste
-set number                          " setting line numbers
+set number                          " default, but this is dealth with through the numbers vim bundle
 
 "" Searching
 set hlsearch                        " highlight matches
@@ -71,15 +71,17 @@ set complete=.,b,u,]
 set wildmode=longest,list:longest
 set completeopt=menu,preview
 
-"" Mapping 
-let mapleader = ","                 " setting leader to , 
-
 "" Color Scheme
-colorscheme wombat          " Tomorrow Theme
+colorscheme wombat     			    " Tomorrow Theme
 
 " Disable Pylint on Save
 let g:pymode_lint_onfly = 1         " python-mode
 let g:pymode_doc_key = 'K'
+let g:pymode_lint_message = 1
+
+" PyMode Run Code
+let g:pymode_run = 1
+let g:pymode_run_bind = '<leader>r'
 
 set laststatus=2                    " Always show the statusline
 
