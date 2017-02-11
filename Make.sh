@@ -9,21 +9,17 @@ set -e
 info () {
   printf "  [ \033[00;34m..\033[0m ] $1\n"
 }
-
 user () {
   printf "\r  [ \033[0;33m?\033[0m ] $1\n"
 }
-
 success () {
   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
-
 fail () {
   printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
   echo ''
   exit
 }
-
 
 init () {
   info "Initializing git submodules..."
@@ -56,7 +52,6 @@ install-shell () {
 install-oh-my-zsh () {
   info "Installing oh-my-zsh..."
   ln -fs ../../cwoebker.zsh-theme $DOTFILES/shell/oh-my-zsh/themes/cwoebker.zsh-theme
-  ln -fs $DOTFILES/shell/oh-my-zsh ~/.oh-my-zsh
 }
 install-vim () {
   info "Linking vim setup..."
