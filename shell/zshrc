@@ -1,45 +1,30 @@
 # Path to your oh-my-zsh configuration.
 DOTFILES=$HOME/.dotfiles
 ZSH=$DOTFILES/shell/oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="cwoebker"
 
-# Editor settings
-export EDITOR=atom$EDITOR
+export LC_ALL="en_US.UTF-8"
+export EDITOR=vim
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
+# oh-my-zsh configuration
+DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(cwoebker brew brew-cask catimg fabric gem
 	git git-extras github heroku nyan osx pip python
-	redis-cli ruby vagrant sublime z zsh-syntax-highlighting)
+	redis-cli ruby vagrant sublime z
+	zsh-autosuggestions zsh-syntax-highlighting zsh-navigation-tools)
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
+# Remove forward-char widgets from ACCEPT
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=("${(@)ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char}")
+# Add forward-char widgets to PARTIAL_ACCEPT
+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
 
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/shell/config.zsh
 source $DOTFILES/shell/path.zsh
+source $DOTFILES/shell/functions.zsh
 # all of our zsh files
 typeset -U alias_files
 alias_files=($DOTFILES/**/aliases.zsh)
@@ -56,9 +41,4 @@ then
   source ~/.localrc
 fi
 
-export ANSIBLE_HOSTS=$DOTFILES/ansible/hosts
-export ANSIBLE_CONFIG=$DOTFILES/anisble/ansible.cfg
-
-# zsh-completions - slow plugin
-# makes it slow?: autoload -U compinit && compinit
-
+#autoload predict-on

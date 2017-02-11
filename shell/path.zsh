@@ -45,3 +45,8 @@ export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 
 export GOPATH=$HOME/Code/go
 export PATH=$PATH:$GOPATH/bin
+
+##### Ansible #####
+
+export ANSIBLE_HOSTS=$DOTFILES/custom/ansible/hosts
+export ANSIBLE_CONFIG=$DOTFILES/custom/anisble/ansible.cfg
