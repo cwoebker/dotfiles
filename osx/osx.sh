@@ -35,10 +35,26 @@ echo "System"
 sudo nvram SystemAudioVolume=" "
 
 # Restart automatically if the computer freezes
-systemsetup -setrestartfreeze off
+sudo systemsetup -setrestartfreeze off
 
 # Never go into computer sleep mode
-systemsetup -setcomputersleep Off > /dev/null
+sudo systemsetup -setcomputersleep Off > /dev/null
+
+
+###############################################################################
+# Security                                                         #
+###############################################################################
+echo "Security"
+
+sudo defaults write /Library/Preferences/com.apple.alf \
+  globalstate -int 1
+sudo defaults write /Library/Preferences/com.apple.alf \
+  allowsignedenabled -bool false
+sudo defaults write /Library/Preferences/com.apple.alf \
+  loggingenabled -bool true
+sudo defaults write /Library/Preferences/com.apple.alf \
+  stealthenabled -bool true
+
 
 ###############################################################################
 # SSD-specific tweaks                                                         #
@@ -50,6 +66,9 @@ sudo tmutil disablelocal
 
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
+sudo pmset -a destroyfvkeyonstandby 0
+# Disable the sudden motion sensor as it’s not useful for SSDs
+sudo pmset -a sms 0
 
 # Remove the sleep image file to save disk space
 sudo rm /Private/var/vm/sleepimage
@@ -58,8 +77,14 @@ sudo touch /Private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
 sudo chflags uchg /Private/var/vm/sleepimage
 
-# Disable the sudden motion sensor as it’s not useful for SSDs
-sudo pmset -a sms 0
+###############################################################################
+# Bonjour                                                                     #
+###############################################################################
+
+# TODO Warning: this kills the DNS on Mac for some reason... have to find a different workaround.
+#sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+#sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponderHelper.plist
+#sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -67,7 +92,7 @@ sudo pmset -a sms 0
 echo "General UI/UX"
 
 # Enable press-and-hold for keys instead of key repeat.
-defaults write -g ApplePressAndHoldEnabled -bool true
+defaults write -g ApplePressAndHoldEnabled -bool false
 # Set a really fast key repeat. only important if holding above disabled
 defaults write NSGlobalDomain KeyRepeat -int 0
 
@@ -166,6 +191,14 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom right screen corner → Start screen saver
 defaults write com.apple.dock wvous-br-corner -int 5
 defaults write com.apple.dock wvous-br-modifier -int 0
+
+###############################################################################
+# Launchpad                                                                  #
+###############################################################################
+echo "Launchpad"
+defaults write com.apple.dock springboard-rows -int 6
+defaults write com.apple.dock springboard-columns -int 8
+defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock
 
 ###############################################################################
 # Finder                                                                      #
@@ -287,6 +320,9 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Disable DNS Prefetching
+defaults write com.apple.safari WebKitDNSPrefetchingEnabled -boolean false
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
