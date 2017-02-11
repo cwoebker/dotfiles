@@ -61,6 +61,8 @@ install-oh-my-zsh () {
 install-vim () {
   info "Linking vim setup..."
   ln -fs $DOTFILES/editor/vim ~/.vim
+  ln -fs $DOTFILES/editor/vim/init.vim ~/.vimrc
+  ln -fs $DOTFILES/editor/vim/gui.vim ~/.gvimrc
   info "Updating vim plugins..."
   info "-----------------------"
   #git submodule foreach git pull origin master --recurse-submodules
