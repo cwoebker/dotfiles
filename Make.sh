@@ -81,6 +81,14 @@ install-virtualenvwrapper () {
   mkdir -p ~/.virtualenvs/
   ln -fs $DOTFILES/custom/virtualenvwrapper/* ~/.virtualenvs/
 }
+install-hosts () {
+  info "Installing hosts file..."
+  if [ $EUID == 0 ]; then
+    cat $DOTFILES/custom/customhosts $DOTFILES/osx/zerohosts > /etc/hosts
+  else
+    user "Need sudo rights to update hosts file"
+  fi
+}
 
 install () {
   info "Installing cwoebker's dotfiles..."
@@ -94,6 +102,7 @@ install () {
   install-sublime
   install-git
   #install-virtualenvwrapper
+  install-hosts
   info "--------------------------------------------"
   success "Installtion of cwoebker's dotfiles complete!"
 }
