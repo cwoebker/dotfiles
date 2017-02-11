@@ -50,7 +50,7 @@ install-bin () {
 install-shell () {
   info "Installing shell configs..."
   ln -fs $DOTFILES/shell/zshrc ~/.zshrc
-  ln -fs $DOTFILES/shell/tmux ~/.tmux.conf
+  ln -fs $DOTFILES/tmux/tmux.conf ~/.tmux.conf
   ln -fs $DOTFILES/custom/tmuxinator ~/.tmuxinator
 }
 install-oh-my-zsh () {
