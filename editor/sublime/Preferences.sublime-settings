@@ -1,8 +1,7 @@
 {
-	"color_scheme": "Packages/User/SublimeLinter/Tomorrow-Night (SL).tmTheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
 	"ignored_packages":
 	[
-		"Package Control",
 		"Vintage"
 	]
 }
