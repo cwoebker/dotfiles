@@ -51,7 +51,7 @@
       "pylint"
     ]
   "linter-pylint":
-    executable: "/usr/local/opt/pyenv/versions/default/bin/pylint"
+    executablePath: "/usr/local/opt/pyenv/versions/default/bin/pylint"
   "markdown-preview":
     grammars: [
       "source.gfm"
