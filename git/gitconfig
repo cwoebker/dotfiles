@@ -1,6 +1,6 @@
 [user]
-    name = cwoebker
-    email = cwoebker@gmail.com
+	name = Cecil Woebker
+	email = cwoebker@gmail.com
 
 [github]
     user = cwoebker
@@ -48,3 +48,8 @@
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

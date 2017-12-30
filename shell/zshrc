@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-DOTFILES=$HOME/.dotfiles
+export DOTFILES=$HOME/.dotfiles
 ZSH=$DOTFILES/shell/oh-my-zsh
 ZSH_THEME="cwoebker"
 
@@ -7,12 +7,12 @@ export LC_ALL="en_US.UTF-8"
 export EDITOR=vim
 
 # oh-my-zsh configuration
-DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="false"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(cwoebker brew brew-cask catimg fabric gem
 	git git-extras github heroku nyan osx pip python
-	redis-cli ruby vagrant sublime z
+	redis-cli ruby vagrant sublime z cp
 	zsh-autosuggestions zsh-syntax-highlighting zsh-navigation-tools)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
@@ -22,8 +22,8 @@ ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=("${(@)ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-ch
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
 
 source $ZSH/oh-my-zsh.sh
-source $DOTFILES/shell/config.zsh
 source $DOTFILES/shell/path.zsh
+source $DOTFILES/shell/config.zsh
 source $DOTFILES/shell/functions.zsh
 # all of our zsh files
 typeset -U alias_files
@@ -33,6 +33,12 @@ do
   source $file
 done
 unset alias_files
+
+# activate zsh completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# activate antigen - zsh plugin system
+# source /usr/local/share/antigen/antigen.zsh
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.

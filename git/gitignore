@@ -17,7 +17,7 @@
 # OS generated files #
 ######################
 .DS_Store
-Icon?
+# Icon? - what is this?!?!?!?!?!?!?
 .Spotlight-V100
 .Trashes
 Thumbs.db
