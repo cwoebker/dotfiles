@@ -1,6 +1,6 @@
 [user]
-	name = Cecil Woebker
-	email = cwoebker@gmail.com
+	name = Cecil Wöbker
+	email = me@cwoebker.com
 
 [github]
     user = cwoebker
@@ -27,17 +27,8 @@
 [core]
     quotepath = false
     editor = atom —wait
-	excludesfile = /Users/cwoebker/.gitignore
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Dev/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+    excludesfile = /Users/cwoebker/.gitignore
+
 [alias]
 	switch = !legit switch \"$@\"
 	branches = !legit branches
@@ -48,6 +39,18 @@
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Dev/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f

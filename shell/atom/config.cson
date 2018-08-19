@@ -17,9 +17,12 @@
       "atom-lint"
       "Zen"
       "command-logger"
-      "editor-stats"
       "metrics"
       "visual-bell"
+      "linter"
+      "linter-pylint"
+      "linter-ui-default"
+      "nuclide-quick-open"
     ]
     ignoredNames: [
       "*.pyc"
