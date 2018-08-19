@@ -1,3 +1,13 @@
+
+export LC_ALL="en_US.UTF-8"
+export EDITOR=vim
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
+# Remove forward-char widgets from ACCEPT
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=("${(@)ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char}")
+# Add forward-char widgets to PARTIAL_ACCEPT
+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
+
 # Terminal 256 colors
 export TERM="xterm-256color";
 

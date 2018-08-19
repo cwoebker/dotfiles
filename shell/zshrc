@@ -4,9 +4,6 @@ ZSH=$DOTFILES/oh-my-zsh
 ZSH_CUSTOM=$DOTFILES/shell/custom-oh-my-zsh
 ZSH_THEME="cwoebker"
 
-export LC_ALL="en_US.UTF-8"
-export EDITOR=vim
-
 # oh-my-zsh configuration
 DISABLE_AUTO_UPDATE="false"
 COMPLETION_WAITING_DOTS="true"
@@ -15,12 +12,6 @@ plugins=(cwoebker brew brew-cask catimg fabric gem
 	git git-extras github heroku nyan osx pip python
 	redis-cli ruby vagrant sublime z cp
 	zsh-autosuggestions zsh-syntax-highlighting zsh-navigation-tools)
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
-# Remove forward-char widgets from ACCEPT
-ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=("${(@)ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char}")
-# Add forward-char widgets to PARTIAL_ACCEPT
-ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
 
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/shell/path.zsh
