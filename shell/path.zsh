@@ -1,7 +1,6 @@
 
 ##### PATH #####
 
-# Customize to your needs...
 
 # Reset PATH to keep it from being clobbered in tmux
 if [ -x /usr/libexec/path_helper ]; then
