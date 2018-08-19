@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh configuration.
 export DOTFILES=$HOME/.dotfiles
-ZSH=$DOTFILES/shell/oh-my-zsh
+ZSH=$DOTFILES/oh-my-zsh
+ZSH_CUSTOM=$DOTFILES/shell/custom-oh-my-zsh
 ZSH_THEME="cwoebker"
 
 export LC_ALL="en_US.UTF-8"

@@ -1,0 +1,20 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc: shell/zshrc
+    ~/.tmux.conf: shell/tmux/tmux.conf
+    ~/.vim: shell/vim
+    ~/.vimrc: shell/vim/config.vim
+    ~/.gitconfig: shell/git/gitconfig
+    ~/.gitignore: shell/git/gitignore
+    ~/.atom: shell/atom
+    ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings:
+        path: shell/sublime/Preferences.sublime-settings
+        force: true
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

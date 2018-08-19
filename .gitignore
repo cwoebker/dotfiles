@@ -1,8 +1,8 @@
-custom
-editor/atom/packages
-editor/atom/storage
-editor/atom/recovery
-editor/atom/compile-cache
-editor/atom/blob-store
-editor/atom/.node-gyp
-editor/atom/.apm
+_other
+shell/atom/packages
+shell/atom/storage
+shell/atom/recovery
+shell/atom/compile-cache
+shell/atom/blob-store
+shell/atom/.node-gyp
+shell/atom/.apm

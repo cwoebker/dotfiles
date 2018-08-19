@@ -1,4 +1,4 @@
-call plug#begin('~/.dotfiles/editor/vim/plugged')
+call plug#begin('~/.dotfiles/shell/vim/plugged')
 
 Plug 'embear/vim-localvimrc'                " local vim configurations
 Plug 'valloric/youcompleteme'               " autocompletion
@@ -180,7 +180,7 @@ let g:localvimrc_ask=0
 
 " NERDtree
 let g:NERDTreeShowHidden=1
-let g:NERDTreeWinSize = 40 
+let g:NERDTreeWinSize = 40
 nnoremap <leader>n :NERDTreeFind<CR>
 nnoremap <leader>m :NERDTreeToggle<CR>
 
@@ -203,7 +203,7 @@ let g:pymode_run_bind = '<leader>r'
 
 "let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
 
-" Enable fancy mode 
+" Enable fancy mode
 let g:Powerline_symbols = 'fancy'   " Powerline
 
 
@@ -225,5 +225,3 @@ let g:Powerline_symbols = 'fancy'   " Powerline
 "set complete=.,b,u,]
 "set wildmode=longest,list:longest
 "set completeopt=menu,preview
-
-
