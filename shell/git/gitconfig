@@ -1,5 +1,5 @@
 [user]
-	name = Cecil Wöbker
+	name = Cecil Wöbker
 	email = me@cwoebker.com
 
 [github]
@@ -26,8 +26,8 @@
 
 [core]
     quotepath = false
-    editor = atom —wait
-    excludesfile = /Users/cwoebker/.gitignore
+    editor = vim
+	excludesfile = /Users/cwoebker/.gitignore_global
 
 [alias]
 	switch = !legit switch \"$@\"
@@ -44,7 +44,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/Dev/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Dev/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
 [filter "media"]
@@ -56,3 +56,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[init]
+	defaultBranch = main
