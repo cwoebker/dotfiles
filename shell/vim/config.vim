@@ -214,7 +214,7 @@ let g:Powerline_symbols = 'fancy'   " Powerline
 "set ofu=syntaxcomplete#Complete
 
 "" Whitespace
-"set backspace=indent,eol,start      " backspace through everything in insert mode
+set backspace=indent,eol,start      " backspace through everything in insert mode
 
 "" Highlight spaces and tabs
 "set list
