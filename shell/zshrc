@@ -8,13 +8,18 @@ ZSH_THEME="cwoebker"
 DISABLE_AUTO_UPDATE="false"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(cwoebker brew brew-cask catimg fabric gem
-	git git-extras github heroku nyan osx pip python
+# fzf (installed via Homebrew)
+export FZF_BASE="${HOMEBREW_PREFIX:-/usr/local}/opt/fzf"
+
+plugins=(brew catimg fabric gem
+	git git-extras github heroku macos pip python
 	redis-cli ruby vagrant sublime z cp
-	zsh-autosuggestions zsh-syntax-highlighting zsh-navigation-tools)
+	zsh-navigation-tools fzf
+	docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/shell/path.zsh
+source $DOTFILES/shell/xdg.zsh
 source $DOTFILES/shell/config.zsh
 source $DOTFILES/shell/functions.zsh
 # all of our zsh files
@@ -29,14 +34,9 @@ unset alias_files
 # activate zsh completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# activate antigen - zsh plugin system
-# source /usr/local/share/antigen/antigen.zsh
-
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
+# use ~/.zshlocalrc for machine-local and work-related settings
+# (secrets, work aliases, machine-specific paths) — never tracked.
+if [[ -a ~/.zshlocalrc ]]
 then
-  source ~/.localrc
+  source ~/.zshlocalrc
 fi
-
-#autoload predict-on
