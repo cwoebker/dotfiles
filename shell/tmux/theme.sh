@@ -41,7 +41,6 @@ set-option -g display-panes-colour $tm_color_inactive
 # clock
 set-window-option -g clock-mode-colour $tm_color_active
 
-tm_battery="#(~/.dotfiles/lib/battery_tm.sh)"
 tm_date="$fmt_status_plain⮃ %R ⮃ %d %b" #"#[fg=$tm_color_inactive] %R %d %b"
 tm_host="$fmt_status_bar_white #h" #"#[fg=$tm_color_feature,bold]#h"
 tm_session_name="$fmt_status_bar_white #S" #" #[fg=$tm_color_feature,bold]$tm_prefix #S"
@@ -56,7 +55,7 @@ set -g status-interval 5
 
 set -g status-left $tm_session_name' '$tm_color_status_white'⮀'
 
-set -g status-right $tm_date' '$tm_color_status_white'⮂'$tm_host''$tm_battery' '
+set -g status-right $tm_date' '$tm_color_status_white'⮂'$tm_host' '
 
 # default window title colors
 #set -g window-status-format "$fmt_status_transparent#[bg=colour238]⮀#[fg=colour15,bg=colour238,bold] #I $fmt_status_transparent⮁#[fg=colour15,bg=colour238,bold] #W #[fg=colour238,bg=colour234,nobold]⮀"
