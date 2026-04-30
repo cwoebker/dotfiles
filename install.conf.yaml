@@ -12,7 +12,7 @@
     ~/.vimrc: shell/vim/config.vim
     ~/.gitconfig: shell/git/gitconfig
     ~/.gitignore: shell/git/gitignore
-    ~/Library/Application\ Support/Sublime\ Text/Packages/User/Preferences.sublime-settings:
+    "~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings":
         path: shell/sublime/Preferences.sublime-settings
         force: true
 
