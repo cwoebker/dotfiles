@@ -126,6 +126,46 @@ prompt_time() {
     prompt_segment white black "%T"
 }
 
+# COMMAND EXECUTION TIME
+if [ ! -n "${BULLETTRAIN_EXEC_TIME_ELAPSED+1}" ]; then
+  BULLETTRAIN_EXEC_TIME_ELAPSED=5
+fi
+if [ ! -n "${BULLETTRAIN_EXEC_TIME_BG+1}" ]; then
+  BULLETTRAIN_EXEC_TIME_BG=yellow
+fi
+if [ ! -n "${BULLETTRAIN_EXEC_TIME_FG+1}" ]; then
+  BULLETTRAIN_EXEC_TIME_FG=black
+fi
+
+# Based on http://stackoverflow.com/a/32164707/3859566
+function displaytime {
+  local T=$1
+  local D=$((T/60/60/24))
+  local H=$((T/60/60%24))
+  local M=$((T/60%60))
+  local S=$((T%60))
+  [[ $D > 0 ]] && printf '%dd' $D
+  [[ $H > 0 ]] && printf '%dh' $H
+  [[ $M > 0 ]] && printf '%dm' $M
+  printf '%ds' $S
+}
+
+# Prompt previous command execution time
+preexec() {
+  cmd_timestamp=`date +%s`
+}
+
+precmd() {
+  local stop=`date +%s`
+  local start=${cmd_timestamp:-$stop}
+  let BULLETTRAIN_last_exec_duration=$stop-$start
+  cmd_timestamp=''
+}
+
+prompt_cmd_exec_time() {
+  [ $BULLETTRAIN_last_exec_duration -gt $BULLETTRAIN_EXEC_TIME_ELAPSED ] && prompt_segment $BULLETTRAIN_EXEC_TIME_BG $BULLETTRAIN_EXEC_TIME_FG "$(displaytime $BULLETTRAIN_last_exec_duration)"
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
@@ -135,6 +175,7 @@ build_prompt() {
   prompt_virtualenv
   prompt_git
   prompt_status
+  prompt_cmd_exec_time
   prompt_end
 }
 
