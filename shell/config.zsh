@@ -14,13 +14,14 @@ export TERM="xterm-256color";
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 
-HISTFILE=~/.zsh_history
+export HISTFILE=$CUSTOM_HISTORY_DIR/zsh_history
 export HISTSIZE=32768;
 export SAVEHIST=$HISTSIZE;
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
 
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_ENV_HINTS=1
 
 unsetopt correct_all
 setopt RM_STAR_WAIT
