@@ -1,48 +1,49 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "caskroom/versions"
-tap "jeffreywildman/virt-manager"
-brew "ansible"
-brew "antigen"
-brew "curl", args: ["with-openssl"]
+# Public Brewfile — personal/general tooling only.
+# Private tools live in ~/.Brewfile.local (untracked).
+# Install: brew bundle --file=Brewfile
+
+# CLI essentials
+brew "bash"
 brew "fzf"
+brew "gh"
 brew "git"
-brew "git-annex"
-brew "hcloud"
+brew "gnu-sed"
+brew "gnupg"
 brew "htop"
-brew "imagemagick"
-brew "jenv"
-brew "node"
-brew "openssl"
-brew "pipenv"
-brew "pyenv"
-brew "pyenv-virtualenv"
-brew "rbenv"
-brew "reattach-to-user-namespace"
+brew "jq"
+brew "pkgconf"
+brew "ripgrep"
+brew "telnet"
 brew "tmux"
-brew "tree"
-brew "vim"
-brew "jeffreywildman/virt-manager/virt-manager"
-brew "jeffreywildman/virt-manager/virt-viewer"
 brew "wget"
-brew "yarn"
-brew "z"
-brew "zsh"
-cask "anki"
-cask "appcleaner"
-cask "bitcoin-core"
-cask "borgbackup"
-cask "burp-suite"
-cask "calibre"
-cask "filebot"
-cask "gimp"
-cask "github"
-cask "grandperspective"
-cask "launchrocket"
-cask "makemkv"
-cask "monero-wallet"
-cask "db-browser-for-sqlite"
-cask "spectacle"
-cask "table-tool"
-cask "transmission"
+brew "xz"
+
+# Networking
+brew "tailscale"
+
+# System
+brew "mole"
+
+# Languages & version managers
+brew "node-build"
+brew "nodenv"
+brew "pyenv"
+brew "rbenv"
+brew "ruby-build"
+
+# Python tooling
+brew "pipenv"
+brew "pipx"
+brew "uv"
+
+# Media & misc
+brew "ffmpeg"
+brew "ghostscript"
+brew "gource"
+brew "tnef"
+
+# Databases
+brew "redis"
+
+# Casks
+cask "orbstack"
