@@ -11,8 +11,7 @@
     ~/.vimrc: shell/vim/config.vim
     ~/.gitconfig: shell/git/gitconfig
     ~/.gitignore: shell/git/gitignore
-    ~/.atom: shell/atom
-    ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings:
+    ~/Library/Application\ Support/Sublime\ Text/Packages/User/Preferences.sublime-settings:
         path: shell/sublime/Preferences.sublime-settings
         force: true
 

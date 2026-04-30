@@ -14,12 +14,3 @@ id_ed25519
 
 # Legacy local-only directory
 _other
-
-# Atom (dead, kept gitignored to avoid noise from leftover state)
-shell/atom/packages
-shell/atom/storage
-shell/atom/recovery
-shell/atom/compile-cache
-shell/atom/blob-store
-shell/atom/.node-gyp
-shell/atom/.apm
