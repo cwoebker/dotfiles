@@ -18,6 +18,9 @@ source $ZSH/oh-my-zsh.sh
 source $DOTFILES/shell/config.zsh
 source $DOTFILES/shell/functions.zsh
 
+# mise — version manager auto-switching for interactive shells
+command -v mise > /dev/null && eval "$(mise activate zsh)"
+
 # Source all aliases.zsh files in the repo
 typeset -U alias_files
 alias_files=($DOTFILES/**/aliases.zsh)

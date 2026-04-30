@@ -26,6 +26,7 @@ brew "tailscale"
 brew "mole"
 
 # Languages & version managers
+brew "mise"
 brew "node-build"
 brew "nodenv"
 brew "pyenv"

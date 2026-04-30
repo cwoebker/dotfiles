@@ -20,3 +20,8 @@ export FZF_BASE="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/fzf"
 # PATH and XDG base dirs
 source $DOTFILES/shell/path.zsh
 source $DOTFILES/shell/xdg.zsh
+
+# mise shim PATH for non-interactive shells. Interactive shells get full
+# activation in ~/.zshrc. Placed after path.zsh so mise wins over legacy
+# version-manager shims during the side-by-side migration.
+export PATH="$HOME/.local/share/mise/shims:$PATH"
