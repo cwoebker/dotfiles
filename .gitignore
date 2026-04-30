@@ -1,4 +1,21 @@
+# Secrets and machine-local overrides — never commit
+shell/secret.zsh
+*.local.zsh
+.zshlocalrc
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# macOS junk
+.DS_Store
+
+# Legacy local-only directory
 _other
+
+# Atom (dead, kept gitignored to avoid noise from leftover state)
 shell/atom/packages
 shell/atom/storage
 shell/atom/recovery
