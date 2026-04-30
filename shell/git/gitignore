@@ -51,10 +51,19 @@ fabfile.py
 # Pyenv
 .python-version
 
+# Ruby #
+########
+
+# rbenv
+.ruby-version
+
 # Node #
 ########
 node_modules
 bower_components
+
+# Nodenv
+.node-version
 
 # Other #
 #########
