@@ -14,3 +14,6 @@ id_ed25519
 
 # Legacy local-only directory
 _other
+
+# Local-only AI assistant guidance
+CLAUDE.md
