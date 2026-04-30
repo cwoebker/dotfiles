@@ -166,6 +166,19 @@ prompt_cmd_exec_time() {
   [ $BULLETTRAIN_last_exec_duration -gt $BULLETTRAIN_EXEC_TIME_ELAPSED ] && prompt_segment $BULLETTRAIN_EXEC_TIME_BG $BULLETTRAIN_EXEC_TIME_FG "$(displaytime $BULLETTRAIN_last_exec_duration)"
 }
 
+# AWS PROFILE
+prompt_aws() {
+  [[ -n "$AWS_PROFILE" ]] && prompt_segment yellow black "☁ $AWS_PROFILE"
+}
+
+# KUBERNETES CONTEXT
+prompt_kctx() {
+  if command -v kubectl >/dev/null 2>&1; then
+    local ctx="$(kubectl config current-context 2>/dev/null)"
+    [[ -n "$ctx" ]] && prompt_segment cyan black "⎈ $ctx"
+  fi
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
@@ -173,6 +186,8 @@ build_prompt() {
   prompt_context
   prompt_dir
   prompt_virtualenv
+  prompt_aws
+  prompt_kctx
   prompt_git
   prompt_status
   prompt_cmd_exec_time
