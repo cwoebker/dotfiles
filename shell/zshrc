@@ -11,11 +11,13 @@ COMPLETION_WAITING_DOTS="true"
 # fzf (installed via Homebrew)
 export FZF_BASE="${HOMEBREW_PREFIX:-/usr/local}/opt/fzf"
 
-plugins=(brew catimg fabric gem
-	git git-extras github heroku macos pip python
-	redis-cli ruby vagrant sublime z cp
-	zsh-navigation-tools fzf
-	docker docker-compose)
+plugins=(
+	brew
+	git git-extras github
+	macos
+	fzf
+	docker docker-compose
+)
 
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/shell/path.zsh
