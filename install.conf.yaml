@@ -6,9 +6,7 @@
 - clean: ['~']
 
 - create:
-    - ~/.tmux/plugins
     - ~/.tmux/resurrect
-    - ~/Library/Application Support/Sublime Text/Packages/User
 
 - link:
     ~/.zshenv: shell/zshenv
@@ -20,6 +18,7 @@
     ~/.config/nvim: shell/nvim
     ~/.gitconfig: shell/git/gitconfig
     ~/.gitignore: shell/git/gitignore
+    ~/.config/mise/config.toml: shell/mise/config.toml
     "~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings":
         path: shell/sublime/Preferences.sublime-settings
         force: true
