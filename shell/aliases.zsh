@@ -17,3 +17,6 @@ alias ohmyzsh="${EDITOR} ${ZSH}"
 
 # https://news.ycombinator.com/item?id=43608619
 alias rsync-perfect='/usr/bin/rsync --archive --xattrs --acls --hard-links --progress --rsh="ssh -p XXX -l YYYYYYY"'
+
+# Keep iTerm2 plist as XML (readable diffs) — run if it ever reverts to binary
+alias iterm2-xml='plutil -convert xml1 ~/.dotfiles/shell/iterm2/com.googlecode.iterm2.plist'

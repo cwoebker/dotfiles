@@ -37,3 +37,9 @@
     stdout: true
   - command: 'chmod -R go-w /opt/homebrew/share/zsh /opt/homebrew/share/zsh-completions 2>/dev/null; true'
     description: Tightening permissions on zsh completion dirs (silences compinit warning)
+  - command: |
+      defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/shell/iterm2"
+      defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+      defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
+      plutil -convert xml1 "$HOME/.dotfiles/shell/iterm2/com.googlecode.iterm2.plist" 2>/dev/null || true
+    description: Pointing iTerm2 at dotfiles preferences (restart iTerm2 to apply)
