@@ -41,5 +41,10 @@ ZSH_BREW_SHARE="${HOMEBREW_PREFIX:-/opt/homebrew}/share"
 [[ -f $ZSH_BREW_SHARE/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
     source $ZSH_BREW_SHARE/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# atuin — SQLite-backed shell history with fuzzy search.
+# Binds Ctrl-R to atuin search; --disable-up-arrow keeps ↑ as plain
+# previous-command (atuin's up-arrow override surprises muscle memory).
+command -v atuin > /dev/null && eval "$(atuin init zsh --disable-up-arrow)"
+
 # ~/.zshlocalrc for machine-local and work-related settings (never tracked)
 [[ -a ~/.zshlocalrc ]] && source ~/.zshlocalrc

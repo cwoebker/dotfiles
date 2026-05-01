@@ -28,6 +28,7 @@
     quotepath = false
     editor = vim
 	excludesfile = /Users/cwoebker/.gitignore_global
+	pager = delta
 
 [alias]
 	switch = !legit switch \"$@\"
@@ -58,3 +59,15 @@
 	process = git-lfs filter-process
 [init]
 	defaultBranch = main
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = false
+	syntax-theme = OneHalfDark
+
+[merge]
+	conflictstyle = zdiff3

@@ -3,12 +3,14 @@
 # Install: brew bundle --file=Brewfile
 
 # CLI essentials
+brew "atuin"
 brew "bash"
 brew "bat"
 brew "eza"
 brew "fzf"
 brew "gh"
 brew "git"
+brew "git-delta"
 brew "gnu-sed"
 brew "gnupg"
 brew "htop"
