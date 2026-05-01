@@ -10,6 +10,16 @@ export TERM="xterm-256color"
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 
+# Telemetry opt-outs across common dev tools.
+# DO_NOT_TRACK is the emerging cross-tool standard (consoledonottrack.com)
+# — respected by atuin, gatsby, supabase, prisma, and others.
+# OrbStack opt-out lives in Settings → Updates & Errors (UI only).
+export DO_NOT_TRACK=1
+export MISE_NO_TRACK=1
+export NEXT_TELEMETRY_DISABLED=1
+export NUXT_TELEMETRY_DISABLED=1
+export GATSBY_TELEMETRY_DISABLED=1
+
 # Fast Homebrew PATH bootstrap for non-login shells (IDE terminals, ssh-exec).
 # Login shells get the full `brew shellenv` via ~/.zprofile.
 [[ -x /opt/homebrew/bin/brew ]] && export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
