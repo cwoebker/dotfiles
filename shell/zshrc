@@ -20,11 +20,11 @@ FZF_SHELL="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/fzf/shell"
 
 # Track kubectl invocations so the prompt's kctx segment can show
 # during the hour after a kubectl command, even outside a k8s repo.
+# Scoped to the current shell session via an exported env var.
 autoload -Uz add-zsh-hook
 _track_kubectl() {
-  [[ "$1" == kubectl* ]] && touch "$HOME/.cache/last-kubectl" 2>/dev/null
+  [[ "$1" == kubectl* ]] && export KUBECTL_LAST_TS=$(date +%s)
 }
-mkdir -p "$HOME/.cache" 2>/dev/null
 add-zsh-hook preexec _track_kubectl
 
 # Starship prompt — replaces oh-my-zsh themes

@@ -8,20 +8,16 @@
 # Triggers (any one is enough):
 #   1. The current directory or an ancestor contains k8s config
 #      (Chart.yaml, kustomization.yaml, k8s/ folder, etc).
-#   2. `kubectl` was invoked within the last hour (via preexec hook
-#      that touches ~/.cache/last-kubectl).
+#   2. `kubectl` was invoked in this shell session within the last hour
+#      (via preexec hook that exports KUBECTL_LAST_TS).
 
 set -u
 
-SENTINEL="$HOME/.cache/last-kubectl"
 RECENT_SECONDS=3600
 
 is_recent() {
-  [ -f "$SENTINEL" ] || return 1
-  local now mtime
-  now=$(date +%s)
-  mtime=$(stat -f %m "$SENTINEL" 2>/dev/null || echo 0)
-  [ $((now - mtime)) -lt "$RECENT_SECONDS" ]
+  [ -n "${KUBECTL_LAST_TS:-}" ] || return 1
+  [ $(( $(date +%s) - KUBECTL_LAST_TS )) -lt "$RECENT_SECONDS" ]
 }
 
 is_k8s_dir() {
