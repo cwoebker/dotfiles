@@ -4,6 +4,8 @@
 
 # CLI essentials
 brew "bash"
+brew "bat"
+brew "eza"
 brew "fzf"
 brew "gh"
 brew "git"
@@ -18,6 +20,7 @@ brew "telnet"
 brew "tmux"
 brew "wget"
 brew "xz"
+brew "zoxide"
 
 # Networking
 brew "tailscale"
@@ -27,11 +30,6 @@ brew "mole"
 
 # Languages & version managers
 brew "mise"
-brew "node-build"
-brew "nodenv"
-brew "pyenv"
-brew "rbenv"
-brew "ruby-build"
 
 # Python tooling
 brew "pipenv"

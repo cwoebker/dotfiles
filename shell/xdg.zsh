@@ -14,7 +14,6 @@ export ADOTDIR=$XDG_CONFIG_HOME/antigen
 export BUNDLE_USER_CONFIG=$XDG_CONFIG_HOME/bundle
 #DATA
 export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
-export _Z_DATA=$XDG_DATA_HOME/z/z
 export MINISHIFT_HOME=$XDG_DATA_HOME/minishift
 export MINIKUBE_HOME=$XDG_DATA_HOME/minikube
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default

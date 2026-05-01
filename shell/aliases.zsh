@@ -1,4 +1,11 @@
 alias reload!='. ~/.zshrc'
+
+# Modern CLI replacements
+alias ls='eza'
+alias ll='eza -lah --git'
+alias la='eza -a'
+alias lt='eza --tree --level=2'
+alias cat='bat --paging=never'
 alias pystall='python setup.py install'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'";
 alias vup="vagrant up && vagrant provision && vagrant ssh"
