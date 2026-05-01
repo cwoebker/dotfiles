@@ -43,8 +43,6 @@ brew "mole"
 brew "mise"
 
 # Python tooling
-brew "pipenv"
-brew "pipx"
 brew "uv"
 
 # Media & misc

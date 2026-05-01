@@ -27,9 +27,12 @@
         force: true
 
 - shell:
+  - command: command -v brew >/dev/null && brew bundle --file=Brewfile || echo "skipped — install Homebrew first (https://brew.sh), then re-run"
+    description: Installing Homebrew packages from Brewfile
+    stdout: true
   - [git submodule update --init --recursive, Installing submodules]
   - [~/.tmux/plugins/tpm/bin/install_plugins, Installing tmux plugins]
-  - command: command -v sheldon >/dev/null && sheldon lock || echo "skipped — run 'brew bundle' first, then re-run install"
+  - command: command -v sheldon >/dev/null && sheldon lock || echo "skipped — sheldon not installed (brew bundle should have installed it)"
     description: Locking sheldon plugins
     stdout: true
   - command: 'chmod -R go-w /opt/homebrew/share/zsh /opt/homebrew/share/zsh-completions 2>/dev/null; true'
