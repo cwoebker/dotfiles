@@ -1,0 +1,2 @@
+-- Autocmds are auto-loaded on VeryLazy.
+-- LazyVim defaults apply; add custom autocmds here.

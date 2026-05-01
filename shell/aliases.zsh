@@ -1,4 +1,6 @@
 alias reload!='. ~/.zshrc'
+alias vi=nvim
+alias vim=nvim
 
 # Modern CLI replacements
 alias ls='eza'

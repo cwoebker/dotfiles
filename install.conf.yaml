@@ -1,6 +1,7 @@
 - defaults:
     link:
       relink: true
+      create: true
 
 - clean: ['~']
 
@@ -16,6 +17,7 @@
     ~/.tmux/plugins/tpm: tpm
     ~/.vim: shell/vim
     ~/.vimrc: shell/vim/config.vim
+    ~/.config/nvim: shell/nvim
     ~/.gitconfig: shell/git/gitconfig
     ~/.gitignore: shell/git/gitignore
     "~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings":

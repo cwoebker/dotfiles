@@ -13,11 +13,14 @@ brew "gnu-sed"
 brew "gnupg"
 brew "htop"
 brew "jq"
+brew "neovim"
 brew "pkgconf"
 brew "ripgrep"
 brew "dust"
 brew "telnet"
 brew "tmux"
+brew "tree-sitter"
+brew "luarocks"
 brew "wget"
 brew "xz"
 brew "zoxide"
@@ -47,3 +50,6 @@ brew "redis"
 
 # Casks
 cask "orbstack"
+
+# Fonts
+cask "font-meslo-lg-nerd-font"
