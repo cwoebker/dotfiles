@@ -18,6 +18,15 @@ FZF_SHELL="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/fzf/shell"
 [[ -f $FZF_SHELL/key-bindings.zsh ]] && source $FZF_SHELL/key-bindings.zsh
 [[ -f $FZF_SHELL/completion.zsh ]] && source $FZF_SHELL/completion.zsh
 
+# Track kubectl invocations so the prompt's kctx segment can show
+# during the hour after a kubectl command, even outside a k8s repo.
+autoload -Uz add-zsh-hook
+_track_kubectl() {
+  [[ "$1" == kubectl* ]] && touch "$HOME/.cache/last-kubectl" 2>/dev/null
+}
+mkdir -p "$HOME/.cache" 2>/dev/null
+add-zsh-hook preexec _track_kubectl
+
 # Starship prompt — replaces oh-my-zsh themes
 command -v starship > /dev/null && eval "$(starship init zsh)"
 

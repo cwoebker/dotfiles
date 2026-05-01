@@ -9,7 +9,7 @@
 format = """\
 $time\
 $directory\
-$kubernetes\
+${custom.kubernetes}\
 ${custom.git_clean}\
 ${custom.git_dirty}\
 $cmd_duration\
@@ -39,9 +39,14 @@ truncation_length = 4
 truncate_to_repo = false
 
 [kubernetes]
-disabled = false
-symbol = "⎈ "
-format = '[](fg:prev_bg bg:kctx_bg)[ $symbol$context ](fg:black bg:kctx_bg)'
+disabled = true  # replaced by custom.kubernetes below
+
+[custom.kubernetes]
+description = "Kubectl context — shows in k8s dirs OR for 1h after kubectl use"
+when = "$DOTFILES/shell/starship/kubernetes.sh check"
+command = "$DOTFILES/shell/starship/kubernetes.sh render"
+format = '[](fg:prev_bg bg:kctx_bg)[ $output ](fg:black bg:kctx_bg)'
+shell = ["bash", "--noprofile", "--norc"]
 
 [custom.git_clean]
 description = "git branch — clean working tree"
