@@ -21,6 +21,7 @@
     ~/.gitconfig: shell/git/gitconfig
     ~/.gitignore: shell/git/gitignore
     ~/.config/mise/config.toml: shell/mise/config.toml
+    ~/.claude/CLAUDE.md: claude/CLAUDE.md
     "~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings":
         path: shell/sublime/Preferences.sublime-settings
         force: true

@@ -15,5 +15,7 @@ id_ed25519
 # Legacy local-only directory
 _other
 
-# Local-only AI assistant guidance
+# Local-only AI assistant guidance (per-project notes stay untracked,
+# but the global CLAUDE.md at claude/ is symlinked to ~/.claude/)
 CLAUDE.md
+!claude/CLAUDE.md
