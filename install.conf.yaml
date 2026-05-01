@@ -13,6 +13,8 @@
     ~/.zshrc: shell/zshrc
     ~/.tmux.conf: shell/tmux/tmux.conf
     ~/.tmux/plugins/tpm: tpm
+    ~/.config/sheldon/plugins.toml: shell/sheldon/plugins.toml
+    ~/.config/starship.toml: shell/starship/starship.toml
     ~/.vim: shell/vim
     ~/.vimrc: shell/vim/config.vim
     ~/.config/nvim: shell/nvim
@@ -26,3 +28,8 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [~/.tmux/plugins/tpm/bin/install_plugins, Installing tmux plugins]
+  - command: command -v sheldon >/dev/null && sheldon lock || echo "skipped — run 'brew bundle' first, then re-run install"
+    description: Locking sheldon plugins
+    stdout: true
+  - command: 'chmod -R go-w /opt/homebrew/share/zsh /opt/homebrew/share/zsh-completions 2>/dev/null; true'
+    description: Tightening permissions on zsh completion dirs (silences compinit warning)

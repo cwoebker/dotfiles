@@ -1,4 +1,4 @@
-alias reload!='. ~/.zshrc'
+alias reload!='exec zsh'
 alias vi=nvim
 alias vim=nvim
 

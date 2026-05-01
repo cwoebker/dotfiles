@@ -1,0 +1,66 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Powerline replica using starship 1.25's prev_bg color alias. Each
+# segment owns its own leading transition arrow with fg:prev_bg, so
+# transitions are dynamic and missing segments leave no orphan
+# triangles. The trailing [](fg:prev_bg) closes whichever color last
+# rendered with a single arrow into terminal background.
+
+format = """\
+$time\
+$directory\
+$kubernetes\
+${custom.git_clean}\
+${custom.git_dirty}\
+$cmd_duration\
+[](fg:prev_bg)\
+ $character"""
+
+add_newline = false
+command_timeout = 2000
+palette = "cwoebker"
+
+[palettes.cwoebker]
+time_bg = "#dadada"
+dir_bg = "#268bd2"
+kctx_bg = "#00afaf"
+git_bg = "#5fd700"
+dirty_bg = "#d7af00"
+duration_bg = "#d7af00"
+
+[time]
+disabled = false
+format = '[ $time ](fg:black bg:time_bg)'
+time_format = "%H:%M"
+
+[directory]
+format = '[](fg:prev_bg bg:dir_bg)[ $path ](fg:black bg:dir_bg)'
+truncation_length = 4
+truncate_to_repo = false
+
+[kubernetes]
+disabled = false
+symbol = "⎈ "
+format = '[](fg:prev_bg bg:kctx_bg)[ $symbol$context ](fg:black bg:kctx_bg)'
+
+[custom.git_clean]
+description = "git branch — clean working tree"
+when = "git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff-index --quiet HEAD -- 2>/dev/null"
+command = "git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null || echo HEAD"
+format = '[](fg:prev_bg bg:git_bg)[ ⭠ $output ](fg:black bg:git_bg)'
+shell = ["bash", "--noprofile", "--norc"]
+
+[custom.git_dirty]
+description = "git branch — dirty working tree"
+when = "git rev-parse --is-inside-work-tree >/dev/null 2>&1 && ! git diff-index --quiet HEAD -- 2>/dev/null"
+command = "git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null || echo HEAD"
+format = '[](fg:prev_bg bg:dirty_bg)[ ⭠ $output ✱ ](fg:black bg:dirty_bg)'
+shell = ["bash", "--noprofile", "--norc"]
+
+[cmd_duration]
+min_time = 5_000
+format = '[](fg:prev_bg bg:duration_bg)[ $duration ](fg:black bg:duration_bg)'
+
+[character]
+success_symbol = ""
+error_symbol = "[✘](bold red)"

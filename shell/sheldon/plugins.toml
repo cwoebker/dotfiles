@@ -1,0 +1,14 @@
+shell = "zsh"
+
+# Selected oh-my-zsh libraries and plugins. Provides muscle-memory git
+# aliases (git plugin) and macOS helpers (macos plugin) without loading
+# the full oh-my-zsh framework. zsh-completions are sourced from
+# Homebrew's /opt/homebrew/share/zsh-completions on fpath in zshrc, so
+# no need to clone them separately here.
+[plugins.ohmyzsh]
+github = "ohmyzsh/ohmyzsh"
+use = [
+    "lib/{git,functions,misc,clipboard,theme-and-appearance}.zsh",
+    "plugins/git/git.plugin.zsh",
+    "plugins/macos/macos.plugin.zsh",
+]

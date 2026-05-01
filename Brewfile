@@ -25,6 +25,12 @@ brew "wget"
 brew "xz"
 brew "zoxide"
 
+# Shell
+brew "sheldon"
+brew "starship"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
 # Networking
 brew "tailscale"
 
