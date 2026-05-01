@@ -4,10 +4,16 @@
 
 - clean: ['~']
 
+- create:
+    - ~/.tmux/plugins
+    - ~/.tmux/resurrect
+    - ~/Library/Application Support/Sublime Text/Packages/User
+
 - link:
     ~/.zshenv: shell/zshenv
     ~/.zshrc: shell/zshrc
     ~/.tmux.conf: shell/tmux/tmux.conf
+    ~/.tmux/plugins/tpm: tpm
     ~/.vim: shell/vim
     ~/.vimrc: shell/vim/config.vim
     ~/.gitconfig: shell/git/gitconfig
@@ -18,3 +24,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [~/.tmux/plugins/tpm/bin/install_plugins, Installing tmux plugins]
