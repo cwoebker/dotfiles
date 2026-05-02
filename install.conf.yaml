@@ -6,13 +6,13 @@
 - clean: ['~']
 
 - create:
-    - ~/.tmux/resurrect
+    - ~/.data/tmux/resurrect
 
 - link:
     ~/.zshenv: shell/zshenv
     ~/.zshrc: shell/zshrc
     ~/.tmux.conf: shell/tmux/tmux.conf
-    ~/.tmux/plugins/tpm: tpm
+    ~/.data/tmux/plugins/tpm: tpm
     ~/.config/sheldon/plugins.toml: shell/sheldon/plugins.toml
     ~/.config/starship.toml: shell/starship/starship.toml
     ~/.vim: shell/vim
@@ -31,7 +31,7 @@
     description: Installing Homebrew packages from Brewfile
     stdout: true
   - [git submodule update --init --recursive, Installing submodules]
-  - [~/.tmux/plugins/tpm/bin/install_plugins, Installing tmux plugins]
+  - [~/.data/tmux/plugins/tpm/bin/install_plugins, Installing tmux plugins]
   - command: command -v sheldon >/dev/null && sheldon lock || echo "skipped — sheldon not installed (brew bundle should have installed it)"
     description: Locking sheldon plugins
     stdout: true

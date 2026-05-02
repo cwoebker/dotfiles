@@ -77,6 +77,11 @@ set nobackup
 set noswapfile
 set clipboard=unnamed       " macOS-friendly
 
+" viminfo under XDG_STATE_HOME (~/.local/state/vim/viminfo)
+let s:vim_state = ($XDG_STATE_HOME != '' ? $XDG_STATE_HOME : $HOME . '/.local/state') . '/vim'
+if !isdirectory(s:vim_state) | call mkdir(s:vim_state, 'p') | endif
+execute 'set viminfo+=n' . s:vim_state . '/viminfo'
+
 if has('mouse')
     set mouse=a
 endif

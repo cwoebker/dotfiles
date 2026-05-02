@@ -12,6 +12,12 @@ export BUNDLE_USER_CACHE=$XDG_CACHE_HOME/bundle
 export ADOTDIR=$XDG_CONFIG_HOME/antigen
 #export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg
 export BUNDLE_USER_CONFIG=$XDG_CONFIG_HOME/bundle
+export AWS_CONFIG_FILE=$XDG_CONFIG_HOME/aws/config
+export AWS_SHARED_CREDENTIALS_FILE=$XDG_CONFIG_HOME/aws/credentials
+export KUBECONFIG=$XDG_CONFIG_HOME/kube/config
+export ANSIBLE_HOME=$XDG_CONFIG_HOME/ansible
+export CDK_HOME=$XDG_CONFIG_HOME/cdk
+export FASTLANE_HOME=$XDG_CONFIG_HOME/fastlane
 #DATA
 export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
 export MINISHIFT_HOME=$XDG_DATA_HOME/minishift
@@ -19,5 +25,11 @@ export MINIKUBE_HOME=$XDG_DATA_HOME/minikube
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export BUNDLE_USER_PLUGIN=$XDG_DATA_HOME/bundle/plugin
+export CP_HOME_DIR=$XDG_DATA_HOME/cocoapods
+export KREW_ROOT=$XDG_DATA_HOME/krew
+export TMUX_PLUGIN_MANAGER_PATH=$XDG_DATA_HOME/tmux/plugins/
+#STATE
+export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/repl_history
+export REDISCLI_HISTFILE=$XDG_STATE_HOME/redis/rediscli_history
 #RUNTIME - ignored for now
 #export TMUX_TMPDIR="$XDG_RUNTIME_DIR"

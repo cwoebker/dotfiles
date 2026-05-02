@@ -2,7 +2,9 @@
 # compinit MUST run before sheldon sources oh-my-zsh plugins so that
 # `compdef` is defined when those plugins try to register completions.
 fpath=(/opt/homebrew/share/zsh-completions $fpath)
-autoload -Uz compinit && compinit
+ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+[[ -d ${ZSH_COMPDUMP:h} ]] || mkdir -p ${ZSH_COMPDUMP:h}
+autoload -Uz compinit && compinit -d $ZSH_COMPDUMP
 
 # sheldon — plugin manager (oh-my-zsh git/macos)
 command -v sheldon > /dev/null && eval "$(sheldon source)"
