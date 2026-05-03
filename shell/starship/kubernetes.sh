@@ -21,14 +21,23 @@ is_recent() {
 }
 
 is_k8s_dir() {
+  local root
+  root=$(git rev-parse --show-toplevel 2>/dev/null) || return 1
+  local k8s_names=(k8s manifests kubernetes deploy deployments infrastructure infra charts helm terraform)
+  local base
+  base=$(basename "$root")
+  for n in "${k8s_names[@]}"; do
+    [[ "$base" == *"$n"* ]] && return 0
+  done
   local dir="$PWD"
-  while [ "$dir" != "/" ]; do
+  while [ "$dir" = "$root" ] || [[ "$dir" == "$root"/* ]]; do
     for f in Chart.yaml skaffold.yaml kustomization.yaml k8s.yaml; do
       [ -f "$dir/$f" ] && return 0
     done
-    for d in k8s manifests kubernetes deploy deployments infrastructure infra charts helm; do
+    for d in "${k8s_names[@]}"; do
       [ -d "$dir/$d" ] && return 0
     done
+    [ "$dir" = "$root" ] && break
     dir=$(dirname "$dir")
   done
   return 1
