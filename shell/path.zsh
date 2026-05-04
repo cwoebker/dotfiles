@@ -15,11 +15,6 @@ export CUSTOM_HISTORY_DIR=$HOME/.history
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.bin:$PATH
 
-##### JAVA #####
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-if command -v jenv > /dev/null; then eval "$(jenv init -)"; fi
-
 ##### PYTHON #####
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
