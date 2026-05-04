@@ -10,6 +10,7 @@ format = """\
 $time\
 $directory\
 ${custom.kubernetes}\
+${custom.aws}\
 ${custom.git_clean}\
 ${custom.git_dirty}\
 $cmd_duration\
@@ -24,6 +25,7 @@ palette = "cwoebker"
 time_bg = "#dadada"
 dir_bg = "#268bd2"
 kctx_bg = "#00afaf"
+aws_bg = "#ff9900"
 git_bg = "#5fd700"
 dirty_bg = "#d7af00"
 duration_bg = "#d7af00"
@@ -46,6 +48,16 @@ description = "Kubectl context — shows in k8s dirs OR for 1h after kubectl use
 when = "$DOTFILES/shell/starship/kubernetes.sh check"
 command = "$DOTFILES/shell/starship/kubernetes.sh render"
 format = '[](fg:prev_bg bg:kctx_bg)[ $output ](fg:black bg:kctx_bg)'
+shell = ["bash", "--noprofile", "--norc"]
+
+[aws]
+disabled = true  # replaced by custom.aws below
+
+[custom.aws]
+description = "AWS profile/region — same gating as custom.kubernetes"
+when = "$DOTFILES/shell/starship/aws.sh"
+command = "$DOTFILES/shell/starship/aws.sh render"
+format = '[](fg:prev_bg bg:aws_bg)[  $output ](fg:black bg:aws_bg)'
 shell = ["bash", "--noprofile", "--norc"]
 
 [custom.git_clean]

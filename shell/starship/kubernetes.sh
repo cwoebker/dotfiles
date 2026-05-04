@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
-# Decide whether to render the kubectl segment in the starship prompt.
+# Kubectl segment for the starship prompt.
 #
-# `check`  — exit 0 if the segment should render; 1 otherwise. Cheap;
-#             no kubectl call.
+# `check`  — exit 0 if the segment should render; 1 otherwise. Two
+#             signals (either is enough):
+#               1. infra.sh check (dir-based infra context)
+#               2. `kubectl` was invoked in this shell within the last
+#                  hour (preexec hook exports KUBECTL_LAST_TS)
 # `render` — emit the aliased context (e.g. "⎈ dev"). Calls kubectl.
-#
-# Triggers (any one is enough):
-#   1. The current directory or an ancestor contains k8s config
-#      (Chart.yaml, kustomization.yaml, k8s/ folder, etc).
-#   2. `kubectl` was invoked in this shell session within the last hour
-#      (via preexec hook that exports KUBECTL_LAST_TS).
 
 set -u
 
@@ -20,32 +17,9 @@ is_recent() {
   [ $(( $(date +%s) - KUBECTL_LAST_TS )) -lt "$RECENT_SECONDS" ]
 }
 
-is_k8s_dir() {
-  local root
-  root=$(git rev-parse --show-toplevel 2>/dev/null) || return 1
-  local k8s_names=(k8s manifests kubernetes deploy deployments infrastructure infra charts helm terraform)
-  local base
-  base=$(basename "$root")
-  for n in "${k8s_names[@]}"; do
-    [[ "$base" == *"$n"* ]] && return 0
-  done
-  local dir="$PWD"
-  while [ "$dir" = "$root" ] || [[ "$dir" == "$root"/* ]]; do
-    for f in Chart.yaml skaffold.yaml kustomization.yaml k8s.yaml; do
-      [ -f "$dir/$f" ] && return 0
-    done
-    for d in "${k8s_names[@]}"; do
-      [ -d "$dir/$d" ] && return 0
-    done
-    [ "$dir" = "$root" ] && break
-    dir=$(dirname "$dir")
-  done
-  return 1
-}
-
 case "${1:-check}" in
   check)
-    is_recent || is_k8s_dir
+    is_recent || "$(dirname "$0")/infra.sh" check
     ;;
   render)
     ctx=$(kubectl config current-context 2>/dev/null) || exit 1
