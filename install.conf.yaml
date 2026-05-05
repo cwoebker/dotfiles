@@ -21,6 +21,8 @@
     ~/.gitconfig: shell/git/gitconfig
     ~/.gitignore: shell/git/gitignore
     ~/.config/mise/config.toml: shell/mise/config.toml
+    ~/.warp/settings.toml: shell/warp/settings.toml
+    ~/.warp/keybindings.yaml: shell/warp/keybindings.yaml
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     "~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings":
         path: shell/sublime/Preferences.sublime-settings
