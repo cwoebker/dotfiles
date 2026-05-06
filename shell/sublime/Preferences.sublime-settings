@@ -1,7 +1,8 @@
 {
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 	"ignored_packages":
 	[
 		"Vintage"
-	]
+	],
+	"theme": "Default Dark.sublime-theme",
 }

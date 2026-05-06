@@ -84,3 +84,8 @@ is_password_prompt_enabled = true
 long_running_threshold = 30
 mode = "enabled"
 play_notification_sound = true
+
+[warpify]
+
+[warpify.ssh]
+ssh_extension_install_mode = "never_install"
