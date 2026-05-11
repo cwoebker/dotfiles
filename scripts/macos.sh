@@ -228,6 +228,14 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Finder sidebar: show sidebar and expand all sections
+defaults write com.apple.finder ShowSidebar -bool true
+defaults write com.apple.finder SidebarDevicesSectionDisclosedState -bool true
+defaults write com.apple.finder SidebarPlacesSectionDisclosedState -bool true
+defaults write com.apple.finder SidebariCloudDriveSectionDisclosedState -bool true
+defaults write com.apple.finder SidebarShowingSignedIntoiCloud -bool true
+defaults write com.apple.finder SidebarShowingiCloudDesktop -bool false
+
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
