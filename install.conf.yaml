@@ -66,8 +66,8 @@
       claude plugin install claude-hud@claude-hud -s user
     description: Installing Claude Code plugins
     stdout: true
-  - command: 'chmod -R go-w /opt/homebrew/share/zsh /opt/homebrew/share/zsh-completions 2>/dev/null; true'
-    description: Tightening permissions on zsh completion dirs (silences compinit warning)
+  - command: 'chmod -R go-w /opt/homebrew/share 2>/dev/null; true'
+    description: Tightening permissions on /opt/homebrew/share (silences compinit warning)
   - command: |
       defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/shell/iterm2"
       defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
