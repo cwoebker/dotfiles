@@ -24,6 +24,24 @@
     ~/.warp/settings.toml: shell/warp/settings.toml
     ~/.warp/keybindings.yaml: shell/warp/keybindings.yaml
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
+    ~/.agents/skills/caveman:
+        path: agents/skills/caveman
+        force: true
+    ~/.agents/skills/find-skills:
+        path: agents/skills/find-skills
+        force: true
+    ~/.agents/skills/grill-me:
+        path: agents/skills/grill-me
+        force: true
+    ~/.claude/skills/caveman:
+        path: agents/skills/caveman
+        force: true
+    ~/.claude/skills/find-skills:
+        path: agents/skills/find-skills
+        force: true
+    ~/.claude/skills/grill-me:
+        path: agents/skills/grill-me
+        force: true
     "~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings":
         path: shell/sublime/Preferences.sublime-settings
         force: true
