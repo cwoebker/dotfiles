@@ -55,6 +55,17 @@
   - command: command -v sheldon >/dev/null && sheldon lock || echo "skipped — sheldon not installed (brew bundle should have installed it)"
     description: Locking sheldon plugins
     stdout: true
+  - command: |
+      if ! command -v claude >/dev/null; then
+        echo "skipped — Claude Code not installed (https://claude.com/claude-code)"
+        exit 0
+      fi
+      claude plugin marketplace add anthropics/claude-plugins-official
+      claude plugin marketplace add jarrodwatts/claude-hud
+      claude plugin install superpowers@claude-plugins-official -s user
+      claude plugin install claude-hud@claude-hud -s user
+    description: Installing Claude Code plugins
+    stdout: true
   - command: 'chmod -R go-w /opt/homebrew/share/zsh /opt/homebrew/share/zsh-completions 2>/dev/null; true'
     description: Tightening permissions on zsh completion dirs (silences compinit warning)
   - command: |
