@@ -156,6 +156,11 @@ defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
+# Cmd+< → Move focus to next window in active application (symbolic hotkey 27).
+# parameters = (char "<" = 60, keycode 10 = ISO key left of Y on DE layout, mods 1048576 = Cmd)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 \
+	'{enabled = 1; value = { parameters = (60, 10, 1048576); type = "standard"; }; }'
+
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
