@@ -1,6 +1,6 @@
 # Interactive zsh options and history.
 
-export HISTFILE=$CUSTOM_HISTORY_DIR/zsh_history
+export HISTFILE=$XDG_STATE_HOME/zsh/history
 export HISTSIZE=32768
 export SAVEHIST=$HISTSIZE
 

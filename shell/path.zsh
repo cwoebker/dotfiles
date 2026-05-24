@@ -7,7 +7,6 @@ export XDG_DATA_HOME=$HOME/.data
 export XDG_STATE_HOME=$HOME/.local/state
 
 export CUSTOM_APP_DIR=$HOME/.app
-export CUSTOM_HISTORY_DIR=$HOME/.history
 
 ##### PATH #####
 
