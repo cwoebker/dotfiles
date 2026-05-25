@@ -8,6 +8,7 @@
 - create:
     - ~/.data/tmux/resurrect
     - ~/.local/state/zsh
+    - ~/.local/state/zsh/sessions
 
 - link:
     ~/.zshenv: shell/zshenv
@@ -22,6 +23,7 @@
     ~/.gitconfig: shell/git/gitconfig
     ~/.gitignore: shell/git/gitignore
     ~/.config/mise/config.toml: shell/mise/config.toml
+    ~/.config/npm/npmrc: shell/npm/npmrc
     ~/.warp/settings.toml: shell/warp/settings.toml
     ~/.warp/keybindings.yaml: shell/warp/keybindings.yaml
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
