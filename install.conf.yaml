@@ -21,7 +21,7 @@
     ~/.vimrc: shell/vim/config.vim
     ~/.config/nvim: shell/nvim
     ~/.gitconfig: shell/git/gitconfig
-    ~/.gitignore: shell/git/gitignore
+    ~/.gitignore_global: shell/git/gitignore
     ~/.config/mise/config.toml: shell/mise/config.toml
     ~/.config/npm/npmrc: shell/npm/npmrc
     ~/.warp/settings.toml: shell/warp/settings.toml
