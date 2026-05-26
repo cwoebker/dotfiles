@@ -22,6 +22,9 @@ export PATH=$XDG_CONFIG_HOME/opam/system/bin:$PATH
 ##### NODE #####
 
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+# prebuild-install (used by native modules like canvas) reads npm_config_cache
+# directly; export it so its _prebuilds dir lands in XDG_CACHE_HOME, not ~/.npm.
+export npm_config_cache=$XDG_CACHE_HOME/npm
 
 ##### GO #####
 
