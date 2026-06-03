@@ -30,3 +30,10 @@ export npm_config_cache=$XDG_CACHE_HOME/npm
 
 export GOPATH=$XDG_DATA_HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+##### RUST #####
+
+# CARGO_HOME/RUSTUP_HOME are set in xdg.zsh (sourced after this file);
+# reference the literal path here so PATH gets the right value. Appended so
+# mise shims take precedence for cargo/rustc themselves.
+export PATH=$PATH:$XDG_DATA_HOME/cargo/bin

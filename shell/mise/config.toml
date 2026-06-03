@@ -3,6 +3,7 @@ node = "24.9.0"
 pnpm = "11.0.9"
 python = "3.14.1"
 ruby = "3.4.8"
+rust = "stable"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "python", "ruby"]
