@@ -54,6 +54,9 @@ brew "tnef"
 # Databases
 brew "redis"
 
+# Kubernetes
+brew "helm"
+
 # Casks
 cask "orbstack"
 
