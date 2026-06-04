@@ -97,3 +97,5 @@ nosetests.xml
 
 #Mr Developer
 .mr.developer.cfg
+
+**/.claude/settings.local.json
