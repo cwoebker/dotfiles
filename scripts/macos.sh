@@ -149,9 +149,16 @@ defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # Cmd+< → Move focus to next window in active application (symbolic hotkey 27).
-# parameters = (char "<" = 60, keycode 10 = ISO key left of Y on DE layout, mods 1048576 = Cmd)
+# parameters = (char "<" = 60, keycode 50 = the "<" key next to left Shift on German
+# ISO Macs — macOS swaps keycodes 10/50 on ISO hardware, mods 1048576 = Cmd).
+# XML plist syntax so enabled/parameters get real bool/integer types; the old-style
+# '{enabled = 1; ...}' syntax stores strings, which the hotkey system ignores.
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 \
-	'{enabled = 1; value = { parameters = (60, 10, 1048576); type = "standard"; }; }'
+	'<dict><key>enabled</key><true/><key>value</key><dict><key>type</key><string>standard</string><key>parameters</key><array><integer>60</integer><integer>50</integer><integer>1048576</integer></array></dict></dict>'
+
+# Re-register the symbolic hotkey table so the change takes effect without logout.
+# Private framework binary — tolerate it moving/disappearing in a future macOS.
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u 2>/dev/null || true
 
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
