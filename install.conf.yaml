@@ -27,6 +27,9 @@
     ~/.config/npm/npmrc: shell/npm/npmrc
     ~/.warp/settings.toml: shell/warp/settings.toml
     ~/.warp/keybindings.yaml: shell/warp/keybindings.yaml
+    ~/.config/cmux/cmux.json:
+        path: shell/cmux/cmux.json
+        force: true
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.agents/skills/caveman:
         path: agents/skills/caveman
