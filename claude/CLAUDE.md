@@ -12,3 +12,5 @@ When auditing whether a ref contains certain content (e.g. "does master have Cla
 - For audits ("is X in this branch's history?"): grep both the local ref and the remote-tracking ref, label outputs clearly.
 - Prefer `--force-with-lease` over `--force` for any push to a shared ref.
 - Reflog entries persist ~90 days by default — recovery is usually possible, but don't rely on that as license to move fast.
+
+@~/.claude/CLAUDE.local.md
